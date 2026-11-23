@@ -161,6 +161,13 @@ html.no-motion *{animation:none!important;transition:none!important;scroll-behav
 .a11y .p button[aria-pressed=true]{background:var(--blue);color:#fff}
 .a11y .p a{grid-column:1/-1;font-size:14.5px}
 #navB{display:none}
+.sig{display:flex;gap:14px;align-items:center;margin-top:36px;padding:18px 20px;border-radius:16px;background:linear-gradient(135deg,#0B2A7A,#1446D4);color:#fff}
+.sig svg{width:64px;height:64px;flex:none}.sig p{margin:0;color:#E3ECFF}.sig strong{color:#fff;font-size:19px}
+.tool{background:#fff;border:2px solid var(--sky);border-radius:18px;padding:22px;margin:20px 0;box-shadow:0 18px 40px -32px rgba(20,70,212,.6)}
+.tool h3{margin:0 0 12px}.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.tool label{display:block;font-weight:600;font-size:15px}.tool input,.tool select,.tool textarea{display:block;width:100%;margin-top:6px;font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px}
+.tres,.tres2{font-size:19px;margin:14px 0 6px;color:var(--ink)}.tres strong,.tres2 strong{color:var(--blue);font-size:24px}.tres span{font-size:15px;color:var(--ink2)}
+.tnote{font-size:14px;color:var(--ink2)}
 @media (max-width:1000px){#navB{display:inline-flex}nav#mainNav{flex-basis:100%}nav#mainNav ul{display:none;flex-direction:column;padding-bottom:12px}nav#mainNav.open ul{display:flex}}
 @media (max-width:860px){.hero .w,main .content{grid-template-columns:1fr}.hero img{max-width:260px}aside .box{position:static}body{font-size:17px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}</style>
@@ -178,7 +185,7 @@ html.no-motion *{animation:none!important;transition:none!important;scroll-behav
  <div class="hw">
   <a class="brand" href="index.html" aria-label="אמיר מרשה – דף הבית"><svg aria-hidden="true"><use href="#seal"/></svg><span><b>אמיר מרשה</b><small>AMIR MARSHA</small></span></a>
   <button id="navB" class="cta" style="padding:9px 18px;cursor:pointer" aria-expanded="false" aria-controls="mainNav">תפריט</button>
-  <nav id="mainNav" aria-label="ניווט ראשי"><ul><li><a href="index.html">בית</a></li><li><a href="lectures.html">הרצאות</a></li><li><a href="empowerment.html">הרצאות השראה</a></li><li><a href="education.html">חינוך</a></li><li><a href="entrepreneurship.html" aria-current="page">יזמות</a></li><li><a href="articles.html">כתבות</a></li><li><a href="contact.html">צור קשר</a></li><li><a href="en.html" lang="en" dir="ltr">English</a></li></ul></nav>
+  <nav id="mainNav" aria-label="ניווט ראשי"><ul><li><a href="index.html">בית</a></li><li><a href="lectures.html">הרצאות</a></li><li><a href="empowerment.html">הרצאות השראה</a></li><li><a href="education.html">חינוך</a></li><li><a href="entrepreneurship.html" aria-current="page">יזמות</a></li><li><a href="articles.html">כתבות</a></li><li><a href="tools.html">כלים</a></li><li><a href="contact.html">צור קשר</a></li><li><a href="en.html" lang="en" dir="ltr">English</a></li></ul></nav>
  </div>
 </header>
 <main id="main" tabindex="-1">
@@ -204,7 +211,7 @@ html.no-motion *{animation:none!important;transition:none!important;scroll-behav
 <p>אמיר פעיל חברתי ומאמין שכל אחד יכול להתחיל שינוי קטן בסביבה שלו: מיזם של תלמידים, יוזמה שכונתית או קבוצה שלוקחת אחריות. בהרצאות לבני נוער הוא מעודד אותם לחשוב על בעיה אחת שמפריעה להם, ועל צעד אחד שאפשר לעשות כבר השבוע.</p>
 <h2>שיתופי פעולה</h2>
 <p>אמיר פתוח לשיתופי פעולה עם ארגונים, מותגים ועסקים שמחפשים קול אמין שמדבר לנוער, להורים ולקהילה. <a href="index.html#collab">לפרטים על שיתופי פעולה</a>.</p></article>
-  <aside><div class="box"><h2>עוד באתר</h2><ul><li><a href="lectures.html">הרצאות השראה, ערכים ומנהיגות</a></li><li><a href="ethiopian-heritage.html">הרצאות על מורשת יהדות אתיופיה</a></li><li><a href="education.html">חינוך והעצמה לבני נוער</a></li><li><a href="articles.html">כל הכתבות</a></li><li><a href="article-sigd.html">חג הסיגד: מה חשוב לדעת</a></li><li><a href="article-seen.html">מה עוזר לתלמיד להרגיש שרואים אותו</a></li><li><a href="article-youth-entrepreneurship.html">יזמות מתחילה בבעיה קטנה</a></li><li><a href="ai.html">בינה מלאכותית וחינוך</a></li><li><a href="empowerment.html">העצמה אישית לבני נוער</a></li><li><a href="contact.html">יצירת קשר והזמנת הרצאה</a></li><li><a href="index.html#testimonials">המלצות על ההרצאות</a></li></ul></div></aside>
+  <aside><div class="box"><h2>עוד באתר</h2><ul><li><a href="lectures.html">הרצאות השראה, ערכים ומנהיגות</a></li><li><a href="ethiopian-heritage.html">הרצאות על מורשת יהדות אתיופיה</a></li><li><a href="education.html">חינוך והעצמה לבני נוער</a></li><li><a href="articles.html">כל הכתבות</a></li><li><a href="tools.html">כלים: מחשבון חיסכון ונאום</a></li><li><a href="article-trust.html">אמון: הבסיס של חינוך</a></li><li><a href="article-strong-opening.html">איך פותחים הרצאה</a></li><li><a href="article-sigd.html">חג הסיגד: מה חשוב לדעת</a></li><li><a href="article-seen.html">מה עוזר לתלמיד להרגיש שרואים אותו</a></li><li><a href="article-youth-entrepreneurship.html">יזמות מתחילה בבעיה קטנה</a></li><li><a href="ai.html">בינה מלאכותית וחינוך</a></li><li><a href="empowerment.html">העצמה אישית לבני נוער</a></li><li><a href="contact.html">יצירת קשר והזמנת הרצאה</a></li><li><a href="index.html#testimonials">המלצות על ההרצאות</a></li></ul></div></aside>
  </div>
  <section class="band">
   <h2>רוצים את אמיר מרשה אצלכם?</h2>
