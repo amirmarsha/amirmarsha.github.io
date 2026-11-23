@@ -131,6 +131,16 @@ section{padding:96px 0}
 .lec .aud::before{content:"מתאים ל: ";font-weight:600;color:var(--ink)}
 .lec-a{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:14px}
 
+/* finder */
+.finder{background:linear-gradient(135deg,#0B2A7A,#1446D4);color:#fff;border-radius:22px;padding:30px;margin-bottom:30px;box-shadow:0 30px 60px -36px rgba(11,42,122,.8)}
+.finder h3{color:#fff;font-size:28px;margin-bottom:4px}.fsub{color:#CFE0FF;margin-bottom:18px}
+.fq{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}.fl{font-weight:700;color:#FFD978;min-width:90px}
+.opt{font:inherit;font-size:16px;font-weight:600;padding:9px 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,.45);background:transparent;color:#fff;cursor:pointer}
+.opt:hover{background:rgba(255,255,255,.12)}.opt[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.fres:empty{display:none}.fres{margin-top:16px;background:#fff;color:var(--ink);border-radius:16px;padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.fres img{width:110px;height:110px;object-fit:cover;border-radius:14px}.fres b{display:block;font-family:'Rubik',sans-serif;font-size:22px;color:var(--blue-d)}.fres p{color:var(--ink-2);margin:4px 0 10px;font-size:16px}
+@media (max-width:520px){.fres{grid-template-columns:1fr}.fres img{width:100%;height:160px}}
+.progress{position:fixed;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),#FFD978);z-index:200;width:0}
 /* gallery */
 .grid{columns:3;column-gap:18px}
 .ph{display:block;width:100%;margin:0 0 18px;padding:0;border:0;background:none;cursor:zoom-in;position:relative;break-inside:avoid;border-radius:var(--r);overflow:hidden;text-align:right;font:inherit}
@@ -321,6 +331,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 </head>
 <body>
 <a class="skip" href="#main">דילוג לתוכן הראשי</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="seal" viewBox="0 0 120 120">
 <circle cx="60" cy="60" r="58" fill="#0B2A7A"/>
 <circle cx="60" cy="60" r="54" fill="none" stroke="#E9C46A" stroke-width="2.6"/>
@@ -389,12 +400,21 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 <section class="lectures" id="lectures" aria-labelledby="hl">
  <div class="wrap">
   <div class="sec-intro"><h2 id="hl">הרצאות</h2><p>לבני נוער ולמבוגרים, לבתי ספר, ארגונים, חברות וקהילות. כל הרצאה מותאמת לגיל, לקהל ולמטרה של האירוע. <a href="lectures.html">כל ההרצאות והשאלות הנפוצות</a></p></div>
-  <article class="lec">
+    <div class="finder" id="finder" aria-labelledby="hf">
+   <h3 id="hf">איזו הרצאה מתאימה לכם?</h3>
+   <p class="fsub">שתי בחירות, והמלצה מוכנה.</p>
+   <div class="fq" role="group" aria-label="מי הקהל?"><span class="fl">מי הקהל?</span>
+    <button type="button" class="opt" data-q="aud" data-v="בני נוער" aria-pressed="false">בני נוער</button><button type="button" class="opt" data-q="aud" data-v="הורים ומבוגרים" aria-pressed="false">הורים ומבוגרים</button><button type="button" class="opt" data-q="aud" data-v="צוות חינוכי" aria-pressed="false">צוות חינוכי</button><button type="button" class="opt" data-q="aud" data-v="חברה או ארגון" aria-pressed="false">חברה או ארגון</button></div>
+   <div class="fq" role="group" aria-label="מה המטרה?"><span class="fl">מה המטרה?</span>
+    <button type="button" class="opt" data-q="goal" data-v="0" aria-pressed="false">השראה וצמיחה</button><button type="button" class="opt" data-q="goal" data-v="1" aria-pressed="false">מנהיגות ואחריות</button><button type="button" class="opt" data-q="goal" data-v="2" aria-pressed="false">יזמות וחדשנות</button><button type="button" class="opt" data-q="goal" data-v="3" aria-pressed="false">זהות ושייכות</button></div>
+   <div class="fres" id="fres" aria-live="polite"></div>
+  </div>
+<article class="lec">
    <img src="img/p-mic.webp" alt="אמיר מרשה מדבר במיקרופון" loading="lazy">
    <div class="lec-b"><h3>לצמוח מכל דרך</h3><p>הרצאת השראה על התמודדות, בחירה ואמונה ביכולת, מתוך סיפור אישי אמיתי. כל משתתף יוצא עם צעד אחד שאפשר לעשות כבר השבוע.</p><p class="aud"><span class="sr-only">מתאים ל: </span>בני נוער, הורים ומבוגרים</p>
    <div class="lec-a"><a class="btn btn-p btn-s" href="#contact" data-topic="לצמוח מכל דרך">הזמנת ההרצאה</a><a class="lnk" href="empowerment.html">לפרטים נוספים</a></div></div>
   </article><article class="lec">
-   <img src="img/slide-police.webp" alt="אמיר מרשה מקבל תעודת הוקרה לאחר הרצאה" loading="lazy">
+   <img src="img/amir-lecture-hall.webp" alt="אמיר מרשה מרצה מול קהל" loading="lazy">
    <div class="lec-b"><h3>מנהיגות שמתחילה בי</h3><p>ערכים, אחריות והשפעה: איך כל אחד יכול להוביל, בכיתה, בצוות ובקהילה. מבוססת על שנים של עבודה חינוכית בשטח.</p><p class="aud"><span class="sr-only">מתאים ל: </span>בני נוער, צוותי חינוך, מנהלים וארגונים</p>
    <div class="lec-a"><a class="btn btn-p btn-s" href="#contact" data-topic="מנהיגות שמתחילה בי">הזמנת ההרצאה</a><a class="lnk" href="lectures.html">לפרטים נוספים</a></div></div>
   </article><article class="lec">
@@ -412,7 +432,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 <section class="gallery" id="gallery" aria-labelledby="hg">
  <div class="wrap">
   <div class="gal-h sec-intro" style="max-width:none"><div><h2 id="hg">גלריה</h2><p>מהבמה, מהשטח ומהדרך. לחיצה על תמונה פותחת אותה בגדול.</p></div></div>
-  <div class="grid"><button type="button" class="ph wide" data-full="img/p-mic.webp" data-cap="עם מיקרופון, ברגע מרגש" aria-label="הגדלת תמונה: עם מיקרופון, ברגע מרגש"><img src="img/p-mic.webp" alt="עם מיקרופון, ברגע מרגש" loading="lazy"><span>עם מיקרופון, ברגע מרגש</span></button><button type="button" class="ph wide" data-full="img/g-hall.webp" data-cap="על הבמה: הרצאה בערב לימוד והשראה" aria-label="הגדלת תמונה: על הבמה: הרצאה בערב לימוד והשראה"><img src="img/g-hall.webp" alt="על הבמה: הרצאה בערב לימוד והשראה" loading="lazy"><span>על הבמה: הרצאה בערב לימוד והשראה</span></button><button type="button" class="ph " data-full="img/p-friend.webp" data-cap="עם חברים ושותפים לדרך" aria-label="הגדלת תמונה: עם חברים ושותפים לדרך"><img src="img/p-friend.webp" alt="עם חברים ושותפים לדרך" loading="lazy"><span>עם חברים ושותפים לדרך</span></button><button type="button" class="ph tall" data-full="img/g-police.webp" data-cap="תעודת הוקרה לאחר הרצאה" aria-label="הגדלת תמונה: תעודת הוקרה לאחר הרצאה"><img src="img/g-police.webp" alt="תעודת הוקרה לאחר הרצאה" loading="lazy"><span>תעודת הוקרה לאחר הרצאה</span></button><button type="button" class="ph " data-full="img/g-channel14.webp" data-cap="ראיון ב״מגזין הבוקר״, ערוץ 14" aria-label="הגדלת תמונה: ראיון ב״מגזין הבוקר״, ערוץ 14"><img src="img/g-channel14.webp" alt="ראיון ב״מגזין הבוקר״, ערוץ 14" loading="lazy"><span>ראיון ב״מגזין הבוקר״, ערוץ 14</span></button><button type="button" class="ph tall" data-full="img/p-stage-music.webp" data-cap="מאחורי הקלעים של ערב מוזיקה" aria-label="הגדלת תמונה: מאחורי הקלעים של ערב מוזיקה"><img src="img/p-stage-music.webp" alt="מאחורי הקלעים של ערב מוזיקה" loading="lazy"><span>מאחורי הקלעים של ערב מוזיקה</span></button><button type="button" class="ph wide" data-full="img/p-ethiopia-mountains.webp" data-cap="מסע עם חברים, ברכסי ההרים" aria-label="הגדלת תמונה: מסע עם חברים, ברכסי ההרים"><img src="img/p-ethiopia-mountains.webp" alt="מסע עם חברים, ברכסי ההרים" loading="lazy"><span>מסע עם חברים, ברכסי ההרים</span></button><button type="button" class="ph tall" data-full="img/p-ashkelon-event.webp" data-cap="באירוע קהילתי באשקלון" aria-label="הגדלת תמונה: באירוע קהילתי באשקלון"><img src="img/p-ashkelon-event.webp" alt="באירוע קהילתי באשקלון" loading="lazy"><span>באירוע קהילתי באשקלון</span></button><button type="button" class="ph " data-full="img/p-plane.webp" data-cap="בדרך למסע" aria-label="הגדלת תמונה: בדרך למסע"><img src="img/p-plane.webp" alt="בדרך למסע" loading="lazy"><span>בדרך למסע</span></button><button type="button" class="ph " data-full="img/p-ethiopia-village.webp" data-cap="מסע עם חברים" aria-label="הגדלת תמונה: מסע עם חברים"><img src="img/p-ethiopia-village.webp" alt="מסע עם חברים" loading="lazy"><span>מסע עם חברים</span></button><button type="button" class="ph wide" data-full="img/g-sigd.webp" data-cap="חג הסיגד בבית הספר תורת משה" aria-label="הגדלת תמונה: חג הסיגד בבית הספר תורת משה"><img src="img/g-sigd.webp" alt="חג הסיגד בבית הספר תורת משה" loading="lazy"><span>חג הסיגד בבית הספר תורת משה</span></button></div>
+  <div class="grid"><button type="button" class="ph wide" data-full="img/p-ethiopia-mountains.webp" data-cap="מסע עם חברים, ברכסי ההרים" aria-label="הגדלת תמונה: מסע עם חברים, ברכסי ההרים"><img src="img/p-ethiopia-mountains.webp" alt="מסע עם חברים, ברכסי ההרים" loading="lazy"><span>מסע עם חברים, ברכסי ההרים</span></button><button type="button" class="ph tall" data-full="img/p-prayer.webp" data-cap="רגע של תפילה" aria-label="הגדלת תמונה: רגע של תפילה"><img src="img/p-prayer.webp" alt="רגע של תפילה" loading="lazy"><span>רגע של תפילה</span></button><button type="button" class="ph tall" data-full="img/p-ashkelon-event.webp" data-cap="באירוע קהילתי באשקלון" aria-label="הגדלת תמונה: באירוע קהילתי באשקלון"><img src="img/p-ashkelon-event.webp" alt="באירוע קהילתי באשקלון" loading="lazy"><span>באירוע קהילתי באשקלון</span></button><button type="button" class="ph wide" data-full="img/g-sigd.webp" data-cap="על הבמה בבית הספר תורת משה" aria-label="הגדלת תמונה: על הבמה בבית הספר תורת משה"><img src="img/g-sigd.webp" alt="על הבמה בבית הספר תורת משה" loading="lazy"><span>על הבמה בבית הספר תורת משה</span></button><button type="button" class="ph " data-full="img/p-plane.webp" data-cap="בדרך למסע" aria-label="הגדלת תמונה: בדרך למסע"><img src="img/p-plane.webp" alt="בדרך למסע" loading="lazy"><span>בדרך למסע</span></button><button type="button" class="ph " data-full="img/p-ethiopia-village.webp" data-cap="מסע עם חברים" aria-label="הגדלת תמונה: מסע עם חברים"><img src="img/p-ethiopia-village.webp" alt="מסע עם חברים" loading="lazy"><span>מסע עם חברים</span></button></div>
   <h3 style="margin-top:56px">מתוך הרצאה</h3>
   <div class="videos">
    <figure><video controls playsinline preload="none" poster="img/poster-a2d198ac.jpg" aria-label="קטע מהרצאה, חלק ראשון"><source src="video/lecture-a2d198ac.mp4" type="video/mp4"></video><figcaption>חלק ראשון</figcaption></figure>
@@ -660,6 +680,14 @@ html.no-motion .route .draw{stroke-dashoffset:0}
  // topic prefill
  var typeSel=document.getElementById('f-type');
  document.querySelectorAll('[data-topic]').forEach(function(l){l.addEventListener('click',function(){var t=l.dataset.topic;[].forEach.call(typeSel.options,function(o){if(o.text===t)typeSel.value=t})})});
+
+ // lecture finder
+ var L=[["לצמוח מכל דרך","img/p-mic.webp","הרצאת השראה על התמודדות, בחירה ואמונה ביכולת, מתוך סיפור אישי."],["מנהיגות שמתחילה בי","img/amir-lecture-hall.webp","ערכים, אחריות והשפעה: איך כל אחד יכול להוביל."],["יזמות בעולם של בינה מלאכותית","img/p-friend.webp","איך מתחילים מיזם ומשתמשים נכון בכלים חדשים."],["זהות, שורשים וחג הסיגד","img/amir-channel14.webp","שיחה על זהות ושייכות, בין היתר דרך מורשת יהדות אתיופיה."]];
+ var sel={aud:null,goal:null},fres=document.getElementById('fres');
+ document.querySelectorAll('#finder .opt').forEach(function(b){b.onclick=function(){var q=b.dataset.q;document.querySelectorAll('#finder .opt[data-q="'+q+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});sel[q]=b.dataset.v;rec()}});
+ function rec(){if(sel.aud===null||sel.goal===null){fres.innerHTML='';return}var l=L[+sel.goal];fres.innerHTML='<img src="'+l[1]+'" alt=""><div><b>'+l[0]+'</b><p>'+l[2]+' מותאמת ל'+sel.aud+'.</p><a class="btn btn-p btn-s" href="#contact" id="fbook">להזמנת ההרצאה</a></div>';document.getElementById('fbook').onclick=function(){[].forEach.call(typeSel.options,function(o){if(o.text===l[0])typeSel.value=l[0]});var a=document.getElementById('f-aud');if(!a.value)a.value=sel.aud}}
+ // reading progress
+ var pr=document.getElementById('progress');window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;pr.style.width=(h>0?scrollY/h*100:0)+'%'},{passive:true});
  // generic validated whatsapp form
  function v(id){return (document.getElementById(id).value||'').trim()}
  function setErr(id,eid,m){document.getElementById(eid).textContent=m||'';document.getElementById(id).setAttribute('aria-invalid',m?'true':'false')}
