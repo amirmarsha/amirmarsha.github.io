@@ -95,7 +95,7 @@ p{max-width:64ch}
 
 /* partners marquee */
 .partners .wrap{display:block}
-.partners h2{margin:0 0 14px!important;text-align:center;font-family:'Rubik',sans-serif!important;font-size:24px!important;font-weight:700!important;color:#0B0B0C!important}
+.partners h2{margin:0 0 14px!important;text-align:center!important;width:100%;font-family:'Rubik',sans-serif!important;font-size:24px!important;font-weight:700!important;color:#0B0B0C!important}
 .mq{overflow:hidden;direction:ltr;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .partners .mq-track{display:flex!important;flex-wrap:nowrap!important;gap:18px!important;width:max-content;list-style:none;margin:0;padding:4px 0;animation:mq 32s linear infinite}
 .mq:hover .mq-track,.mq:focus-within .mq-track{animation-play-state:paused}
@@ -393,7 +393,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 </section>
 
 <section class="partners" aria-labelledby="ph" style="padding:34px 0 40px">
- <div class="wrap"><h2 id="ph">הופעות ושיתופי פעולה</h2><div class="mq"><ul class="mq-track"><li class="lg"><img src="img/logo-hagefen.webp" alt="קהילת הגפן" width="366" height="400" loading="lazy"></li><li class="lg"><img src="img/logo-police.webp" alt="משטרת ישראל" width="194" height="177" loading="lazy"></li><li class="lg"><span>ערוץ 14, מגזין הבוקר</span></li><li class="lg"><span>מרכזי הנוער OU ישראל</span></li><li class="lg"><span>מכללת אורות ישראל</span></li><li class="lg"><span>רשת החוגים אינטליגנט</span></li><li class="lg"><span>דרך עמי</span></li><li class="lg"><span>בית הספר תורת משה</span></li><li class="lg" aria-hidden="true"><img src="img/logo-hagefen.webp" alt="" width="366" height="400" loading="lazy"></li><li class="lg" aria-hidden="true"><img src="img/logo-police.webp" alt="" width="194" height="177" loading="lazy"></li><li class="lg" aria-hidden="true"><span>ערוץ 14, מגזין הבוקר</span></li><li class="lg" aria-hidden="true"><span>מרכזי הנוער OU ישראל</span></li><li class="lg" aria-hidden="true"><span>מכללת אורות ישראל</span></li><li class="lg" aria-hidden="true"><span>רשת החוגים אינטליגנט</span></li><li class="lg" aria-hidden="true"><span>דרך עמי</span></li><li class="lg" aria-hidden="true"><span>בית הספר תורת משה</span></li></ul></div></div>
+ <div class="wrap"><h2 id="ph">הופעות ושיתופי פעולה</h2><div class="mq"><ul class="mq-track"><li class="lg"><img src="img/logo-hagefen.webp" alt="קהילת הגפן" width="366" height="400" loading="lazy"></li><li class="lg"><img src="img/logo-police.webp" alt="משטרת ישראל" width="194" height="177" loading="lazy"></li><li class="lg"><img src="img/logo-c14.webp" alt="ערוץ 14" width="420" height="412" loading="lazy"></li><li class="lg"><img src="img/logo-ou.webp" alt="מרכזי הנוער OU ישראל" width="420" height="263" loading="lazy"></li><li class="lg"><img src="img/logo-orot.webp" alt="מכללת אורות ישראל" width="410" height="420" loading="lazy"></li><li class="lg"><span>רשת החוגים אינטליגנט</span></li><li class="lg"><span>דרך עמי</span></li><li class="lg"><span>בית הספר תורת משה</span></li><li class="lg" aria-hidden="true"><img src="img/logo-hagefen.webp" alt="" width="366" height="400" loading="lazy"></li><li class="lg" aria-hidden="true"><img src="img/logo-police.webp" alt="" width="194" height="177" loading="lazy"></li><li class="lg" aria-hidden="true"><img src="img/logo-c14.webp" alt="" width="420" height="412" loading="lazy"></li><li class="lg" aria-hidden="true"><img src="img/logo-ou.webp" alt="" width="420" height="263" loading="lazy"></li><li class="lg" aria-hidden="true"><img src="img/logo-orot.webp" alt="" width="410" height="420" loading="lazy"></li><li class="lg" aria-hidden="true"><span>רשת החוגים אינטליגנט</span></li><li class="lg" aria-hidden="true"><span>דרך עמי</span></li><li class="lg" aria-hidden="true"><span>בית הספר תורת משה</span></li></ul></div></div>
 </section>
 
 <section class="about" id="about" aria-labelledby="ha">
@@ -771,6 +771,32 @@ html.no-motion .route .draw{stroke-dashoffset:0}
   else if(lw.classList.contains('open')){if(e.key==='Escape')closeLegal();else if(e.key==='Tab')trap(lw.querySelector('.legal-doc.on'),e)}
   else if(panel.classList.contains('open')&&e.key==='Escape'){tp(false);a11yBtn.focus()}
  });
+})();
+</script>
+<!-- music -->
+<style>
+.mu-btn{position:fixed;left:28px;bottom:90px;z-index:90;width:44px;height:44px;border-radius:50%;border:1px solid #E9C46A;background:#0B0B0C;color:#E9C46A;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);padding:0}
+.mu-btn:focus-visible{outline:3px solid #E9C46A;outline-offset:3px}
+.mu-btn .bars{display:flex;gap:3px;align-items:flex-end;height:16px}
+.mu-btn .bars i{display:block;width:3px;height:5px;background:#E9C46A;border-radius:2px}
+.mu-btn[aria-pressed="true"] .bars i{animation:mub 1s ease-in-out infinite}
+.mu-btn[aria-pressed="true"] .bars i:nth-child(2){animation-delay:.2s}.mu-btn[aria-pressed="true"] .bars i:nth-child(3){animation-delay:.4s}.mu-btn[aria-pressed="true"] .bars i:nth-child(4){animation-delay:.1s}
+.mu-btn[aria-pressed="false"] .bars{opacity:.55}
+@keyframes mub{0%,100%{height:4px}50%{height:16px}}
+@media (prefers-reduced-motion:reduce){.mu-btn .bars i{animation:none!important;height:10px!important}}
+html.no-motion .mu-btn .bars i{animation:none!important;height:10px!important}
+</style>
+<button type="button" class="mu-btn" id="muBtn" aria-pressed="false" aria-label="השמעת מוזיקת רקע" title="מוזיקת רקע"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+<audio id="muAudio" src="audio/calm.mp3" loop preload="none"></audio>
+<script>
+(function(){var a=document.getElementById('muAudio'),b=document.getElementById('muBtn');if(!a||!b)return;a.volume=.28;
+function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function ui(p){b.setAttribute('aria-pressed',p?'true':'false');b.setAttribute('aria-label',p?'עצירת מוזיקת הרקע':'השמעת מוזיקת רקע')}
+try{var t=parseFloat(sessionStorage.getItem('am_mu_t'));if(t>0)a.currentTime=t}catch(e){}
+function play(){var p=a.play();if(p&&p.then)p.then(function(){ui(true)}).catch(function(){ui(false)});else ui(true)}
+b.addEventListener('click',function(){if(a.paused){s('am_music','on');play()}else{a.pause();s('am_music','off');ui(false)}});
+window.addEventListener('pagehide',function(){try{sessionStorage.setItem('am_mu_t',a.currentTime)}catch(e){}});
+if(g('am_music')!=='off'){play();var f=function(e){if(e.target.closest&&e.target.closest('#muBtn'))return;if(a.paused&&g('am_music')!=='off')play();rm()};var rm=function(){['pointerdown','keydown','touchstart'].forEach(function(n){document.removeEventListener(n,f,true)})};['pointerdown','keydown','touchstart'].forEach(function(n){document.addEventListener(n,f,true)})}
 })();
 </script>
 </body>

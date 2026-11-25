@@ -241,5 +241,31 @@ b.onclick=function(){var o=p.classList.toggle('open');b.setAttribute('aria-expan
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&p.classList.contains('open')){p.classList.remove('open');b.setAttribute('aria-expanded',false);b.focus()}});
 p.onclick=function(e){var x=e.target.closest('button');if(!x)return;var a=x.dataset.a;if(a==='up'){fs=Math.min(3,fs+1);af()}else if(a==='down'){fs=Math.max(0,fs-1);af()}else if(a==='reset'){fs=0;af();['hc','links','no-motion'].forEach(function(m){sm(m,false)})}else sm(a,!r.classList.contains(a))};
 var nb=document.getElementById('navB');if(nb)nb.onclick=function(){var n=document.getElementById('mainNav'),o=n.classList.toggle('open');nb.setAttribute('aria-expanded',o)};})();</script>
+<!-- music -->
+<style>
+.mu-btn{position:fixed;left:28px;bottom:90px;z-index:90;width:44px;height:44px;border-radius:50%;border:1px solid #E9C46A;background:#0B0B0C;color:#E9C46A;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);padding:0}
+.mu-btn:focus-visible{outline:3px solid #E9C46A;outline-offset:3px}
+.mu-btn .bars{display:flex;gap:3px;align-items:flex-end;height:16px}
+.mu-btn .bars i{display:block;width:3px;height:5px;background:#E9C46A;border-radius:2px}
+.mu-btn[aria-pressed="true"] .bars i{animation:mub 1s ease-in-out infinite}
+.mu-btn[aria-pressed="true"] .bars i:nth-child(2){animation-delay:.2s}.mu-btn[aria-pressed="true"] .bars i:nth-child(3){animation-delay:.4s}.mu-btn[aria-pressed="true"] .bars i:nth-child(4){animation-delay:.1s}
+.mu-btn[aria-pressed="false"] .bars{opacity:.55}
+@keyframes mub{0%,100%{height:4px}50%{height:16px}}
+@media (prefers-reduced-motion:reduce){.mu-btn .bars i{animation:none!important;height:10px!important}}
+html.no-motion .mu-btn .bars i{animation:none!important;height:10px!important}
+</style>
+<button type="button" class="mu-btn" id="muBtn" aria-pressed="false" aria-label="השמעת מוזיקת רקע" title="מוזיקת רקע"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+<audio id="muAudio" src="audio/calm.mp3" loop preload="none"></audio>
+<script>
+(function(){var a=document.getElementById('muAudio'),b=document.getElementById('muBtn');if(!a||!b)return;a.volume=.28;
+function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function ui(p){b.setAttribute('aria-pressed',p?'true':'false');b.setAttribute('aria-label',p?'עצירת מוזיקת הרקע':'השמעת מוזיקת רקע')}
+try{var t=parseFloat(sessionStorage.getItem('am_mu_t'));if(t>0)a.currentTime=t}catch(e){}
+function play(){var p=a.play();if(p&&p.then)p.then(function(){ui(true)}).catch(function(){ui(false)});else ui(true)}
+b.addEventListener('click',function(){if(a.paused){s('am_music','on');play()}else{a.pause();s('am_music','off');ui(false)}});
+window.addEventListener('pagehide',function(){try{sessionStorage.setItem('am_mu_t',a.currentTime)}catch(e){}});
+if(g('am_music')!=='off'){play();var f=function(e){if(e.target.closest&&e.target.closest('#muBtn'))return;if(a.paused&&g('am_music')!=='off')play();rm()};var rm=function(){['pointerdown','keydown','touchstart'].forEach(function(n){document.removeEventListener(n,f,true)})};['pointerdown','keydown','touchstart'].forEach(function(n){document.addEventListener(n,f,true)})}
+})();
+</script>
 </body>
 </html>
