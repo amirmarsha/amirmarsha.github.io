@@ -93,6 +93,30 @@ p{max-width:64ch}
 .hero-ph .badge{position:absolute;top:22px;left:-18px;width:120px;height:120px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.35))}
 .hero-ph figcaption{position:absolute;bottom:18px;right:18px;background:#fff;padding:8px 14px;border-radius:10px;font-size:14.5px;color:var(--ink-2);box-shadow:0 8px 24px -12px rgba(14,26,43,.35)}
 
+/* testimonials carousel */
+.testi{background:var(--stone)!important;padding:84px 0}
+.testi .wrap{display:block!important}
+.tcar{position:relative;margin-top:8px}
+.tc-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 2px 14px;scrollbar-width:none}
+.tc-track::-webkit-scrollbar{display:none}
+.tc-track:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:12px}
+.tq{flex:0 0 calc((100% - 36px)/3);scroll-snap-align:start;margin:0;background:#0B0B0C;color:#fff;border-radius:18px;padding:30px 28px 26px;position:relative;display:flex;flex-direction:column;min-height:280px;border:1px solid #2a2a2a}
+.tq::before{content:"”";position:absolute;top:6px;left:22px;font-family:'Frank Ruhl Libre',serif;font-size:96px;line-height:1;color:#E9C46A;opacity:.85}
+.tq-tag{align-self:flex-start;font-size:13px;font-weight:700;color:#0B0B0C;background:#E9C46A;border-radius:99px;padding:4px 12px;margin-bottom:16px}
+.tq blockquote{font-family:'Rubik',sans-serif;font-weight:500;font-size:18px;line-height:1.65;margin:0 0 18px;color:#fff}
+.tq figcaption{margin-top:auto;padding-top:14px;border-top:1px solid #333;font-size:15px;color:#E9C46A;font-weight:700}
+.tc-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:14px}
+.tc-btn{width:44px;height:44px;border-radius:50%;border:1px solid #0B0B0C;background:#fff;color:#0B0B0C;font-size:26px;line-height:1;cursor:pointer}
+.tc-btn:hover{background:#0B0B0C;color:#E9C46A}
+.tc-btn:focus-visible,.tc-dot:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.tc-dots{display:flex;gap:8px}
+.tc-dot{width:10px;height:10px;border-radius:99px;border:0;padding:0;background:#c9c2b0;cursor:pointer;transition:width .3s}
+.tc-dot[aria-current="true"]{width:28px;background:#B8892B}
+.testi-bottom{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;margin-top:54px;align-items:start}
+.testi-bottom .cert{margin-top:0;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
+@media (max-width:1000px){.tq{flex-basis:calc((100% - 18px)/2)}}
+@media (max-width:680px){.tq{flex-basis:86%;min-height:0}.testi-bottom{grid-template-columns:1fr;gap:24px}.testi{padding:60px 0}}
+@media (prefers-reduced-motion:reduce){.tc-track{scroll-behavior:auto}.tc-dot{transition:none}}
 /* photo gallery */
 .phgrid{columns:3 280px;column-gap:16px}
 .phgrid .ph{break-inside:avoid;margin:0 0 16px;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
@@ -564,15 +588,20 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 
 <section class="testi" id="testimonials" aria-labelledby="ht">
  <div class="wrap">
-  <div>
-   <h2 id="ht">המלצות</h2>
-   <div class="quotes">
-    <figure class="q"><blockquote>אמרו שהיה להם מאוד משמעותי לשמוע את מסירות הנפש. לא הכירו בכלל, ואמרו שאתה מעניין ומדבר יפה. תודה רבה על ההשקעה!</blockquote><figcaption>רכזת שהזמינה את ההרצאה</figcaption></figure>
-    <figure class="q"><blockquote>אמרו שהייתה הרצאה מעולה ממש! יש לך אולי פלייר שאוכל להעביר לעוד מרכזים בארץ ולהמליץ עליך?</blockquote><figcaption>מזמינת הרצאה</figcaption></figure>
-    <figure class="q"><blockquote>אחי, הרצאה מעלפת.</blockquote><figcaption>משוב לאחר הרצאה</figcaption></figure>
+  <div class="sec-intro"><h2 id="ht">מה אומרים עליי</h2><p>הודעות אמיתיות שקיבלתי ממארגנים, מצוותים ומבתי ספר אחרי הרצאות ומפגשים.</p></div>
+  <div class="tcar" role="region" aria-roledescription="קרוסלה" aria-label="המלצות">
+   <div class="tc-track" id="tcTrack" tabindex="0">
+    <figure class="tq" role="group" aria-roledescription="שקופית" aria-label="המלצה 1 מתוך 6"><span class="tq-tag">ערב חג הסיגד</span><blockquote>אמיר יקר, היה מרגש ומעניין, ושמענו סיפור נוסף ואנושי על החג והמסורת שלכם. תודה גדולה ובהצלחה בכל אשר תפנה.</blockquote><figcaption>מועצה אזורית יואב</figcaption></figure>
+    <figure class="tq" role="group" aria-roledescription="שקופית" aria-label="המלצה 2 מתוך 6"><span class="tq-tag">שיחה עם תלמידים</span><blockquote>אמיר היקר, תודה רבה על השיחה היום בבית הספר. הילדים נהנו, הצוות נהנה. אתה אלוף!</blockquote><figcaption>צוות בית ספר</figcaption></figure>
+    <figure class="tq" role="group" aria-roledescription="שקופית" aria-label="המלצה 3 מתוך 6"><span class="tq-tag">הרצאה לבני נוער</span><blockquote>היה מדהים, חידש לי הרבה. עם כמה שאנחנו מעורים בעולם הנוער, לא ידעתי אפילו דברים שלכאורה פשוטים, כמו מה זה בכלל סיגד. תודה על החידושים ועל השיתוף האישי על המשפחה. בעזרת השם שנזכה להמשיך להביא אותך.</blockquote><figcaption>מארגן ההרצאה, תחום הנוער</figcaption></figure>
+    <figure class="tq" role="group" aria-roledescription="שקופית" aria-label="המלצה 4 מתוך 6"><span class="tq-tag">הרצאה</span><blockquote>אמרו שהיה להם מאוד משמעותי לשמוע את מסירות הנפש. לא הכירו בכלל, ואמרו שאתה מעניין ומדבר יפה. תודה רבה על ההשקעה!</blockquote><figcaption>רכזת שהזמינה את ההרצאה</figcaption></figure>
+    <figure class="tq" role="group" aria-roledescription="שקופית" aria-label="המלצה 5 מתוך 6"><span class="tq-tag">הרצאה</span><blockquote>אמרו שהייתה הרצאה מעולה ממש! יש לך אולי פלייר שאוכל להעביר לעוד מרכזים בארץ ולהמליץ עליך?</blockquote><figcaption>מזמינת הרצאה</figcaption></figure>
+    <figure class="tq" role="group" aria-roledescription="שקופית" aria-label="המלצה 6 מתוך 6"><span class="tq-tag">הרצאה</span><blockquote>אחי, הרצאה מעלפת.</blockquote><figcaption>משוב לאחר הרצאה</figcaption></figure>
    </div>
-   <div class="cert"><img src="img/amir-police-certificate.webp" alt="אמיר מרשה מקבל תעודת הוקרה ממשטרת ישראל בקריית גת" loading="lazy" width="700" height="868"><p>הוקרה ממשטרת ישראל בקריית גת, שהוענקה לי בתום הרצאה שהעברתי שם.</p></div>
+   <div class="tc-nav"><button type="button" class="tc-btn" id="tcPrev" aria-label="ההמלצה הקודמת">›</button><div class="tc-dots"><button type="button" class="tc-dot" aria-label="המלצה 1"></button><button type="button" class="tc-dot" aria-label="המלצה 2"></button><button type="button" class="tc-dot" aria-label="המלצה 3"></button><button type="button" class="tc-dot" aria-label="המלצה 4"></button><button type="button" class="tc-dot" aria-label="המלצה 5"></button><button type="button" class="tc-dot" aria-label="המלצה 6"></button></div><button type="button" class="tc-btn" id="tcNext" aria-label="ההמלצה הבאה">‹</button></div>
   </div>
+  <div class="testi-bottom">
+   <div class="cert"><img src="img/amir-police-certificate.webp" alt="אמיר מרשה מקבל תעודת הוקרה ממשטרת ישראל בקריית גת" loading="lazy" width="700" height="868"><p>הוקרה ממשטרת ישראל בקריית גת, שהוענקה לי בתום הרצאה שהעברתי שם.</p></div>
   <form class="tform" id="tForm" novalidate aria-labelledby="htf">
    <h3 id="htf">כתבו המלצה</h3>
    <p class="note">הייתם בהרצאה או עבדנו יחד? ההמלצה נשלחת אליי בוואטסאפ, ומתפרסמת כאן אחרי שאאשר אותה.</p>
@@ -588,6 +617,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
    <button type="submit" class="btn btn-p">שליחת ההמלצה</button>
    <div class="ok" id="tOk" role="status" tabindex="-1"></div>
   </form>
+  </div>
  </div>
 </section>
 
@@ -854,6 +884,21 @@ html.no-motion .route .draw{stroke-dashoffset:0}
   else if(lw.classList.contains('open')){if(e.key==='Escape')closeLegal();else if(e.key==='Tab')trap(lw.querySelector('.legal-doc.on'),e)}
   else if(panel.classList.contains('open')&&e.key==='Escape'){tp(false);a11yBtn.focus()}
  });
+})();
+</script>
+<script>
+(function(){var t=document.getElementById('tcTrack');if(!t)return;var s=[].slice.call(t.querySelectorAll('.tq')),d=[].slice.call(document.querySelectorAll('.tc-dot')),i=0,timer;
+function cur(){var r=t.getBoundingClientRect().right,b=0,m=1e9;s.forEach(function(x,k){var v=Math.abs(x.getBoundingClientRect().right-r);if(v<m){m=v;b=k}});return b}
+function mark(){i=cur();d.forEach(function(x,k){x.setAttribute('aria-current',k===i?'true':'false')})}
+function go(k){k=(k+s.length)%s.length;var x=s[k];t.scrollTo({left:t.scrollLeft+(x.getBoundingClientRect().right-t.getBoundingClientRect().right)});}
+document.getElementById('tcNext').onclick=function(){go(i+1)};document.getElementById('tcPrev').onclick=function(){go(i-1)};
+d.forEach(function(x,k){x.onclick=function(){go(k)}});
+var st;t.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(mark,80)},{passive:true});mark();
+var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function play(){stop();if(rm||document.documentElement.classList.contains('no-motion'))return;timer=setInterval(function(){var full=t.scrollWidth-t.clientWidth;if(Math.abs(t.scrollLeft)>=full-4)t.scrollTo({left:0});else go(i+1)},6500)}
+function stop(){clearInterval(timer)}
+var c=t.parentNode;['mouseenter','focusin','touchstart'].forEach(function(e){c.addEventListener(e,stop,{passive:true})});['mouseleave','focusout'].forEach(function(e){c.addEventListener(e,play)});
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){es[0].isIntersecting?play():stop()}).observe(c)}else play();
 })();
 </script>
 <!-- music -->
