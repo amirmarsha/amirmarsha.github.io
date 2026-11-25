@@ -95,17 +95,17 @@ p{max-width:64ch}
 
 /* partners marquee */
 .partners .wrap{display:block}
-.partners h2{margin:0 0 18px!important;text-align:center}
+.partners h2{margin:0 0 14px!important;text-align:center;font-family:'Rubik',sans-serif!important;font-size:24px!important;font-weight:700!important;color:#0B0B0C!important}
 .mq{overflow:hidden;direction:ltr;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .partners .mq-track{display:flex!important;flex-wrap:nowrap!important;gap:18px!important;width:max-content;list-style:none;margin:0;padding:4px 0;animation:mq 32s linear infinite}
 .mq:hover .mq-track,.mq:focus-within .mq-track{animation-play-state:paused}
-.partners li.lg{direction:rtl;flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:84px;min-width:170px;padding:12px 22px;background:#fff;border:1px solid var(--line);border-radius:14px;font-family:'Rubik',sans-serif;font-weight:600;font-size:16px;color:#0B0B0C;text-align:center}
-.partners li.lg img{max-height:66px;max-width:150px;width:auto;height:auto;object-fit:contain}
+.partners li.lg{direction:rtl;flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:110px;min-width:150px;padding:8px 26px;background:transparent;border:0;border-radius:0;font-family:'Rubik',sans-serif;font-weight:600;font-size:16px;color:#0B0B0C;text-align:center}
+.partners li.lg img{max-height:100px;max-width:170px;width:auto;height:auto;object-fit:contain}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 9px))}}
 @media (prefers-reduced-motion:reduce){.partners .mq-track{animation:none;flex-wrap:wrap!important;width:auto;justify-content:center}.partners li.lg[aria-hidden]{display:none}}
 html.no-motion .partners .mq-track{animation:none}
 /* partners strip */
-.partners{background:var(--stone);padding:34px 0 40px;border-bottom:1px solid var(--line)}
+.partners{background:#fff;padding:34px 0 40px;border-bottom:1px solid var(--line)}
 .partners .wrap{display:flex;gap:28px;align-items:baseline;flex-wrap:wrap}
 .partners h2{font-family:'Assistant',sans-serif;font-size:16px;font-weight:500;color:var(--ink-2);margin:0}
 .partners ul{display:flex;flex-wrap:wrap;gap:14px 40px;list-style:none}
