@@ -93,6 +93,16 @@ p{max-width:64ch}
 .hero-ph .badge{position:absolute;top:22px;left:-18px;width:120px;height:120px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.35))}
 .hero-ph figcaption{position:absolute;bottom:18px;right:18px;background:#fff;padding:8px 14px;border-radius:10px;font-size:14.5px;color:var(--ink-2);box-shadow:0 8px 24px -12px rgba(14,26,43,.35)}
 
+/* photo gallery */
+.phgrid{columns:3 280px;column-gap:16px}
+.phgrid .ph{break-inside:avoid;margin:0 0 16px;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.ph-open{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.ph-open img{display:block;width:100%;height:auto;transition:transform .4s}
+.ph-open:hover img{transform:scale(1.03)}
+.ph-open:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.ph figcaption{padding:10px 14px;font-size:15px;color:var(--ink-2)}
+@media (prefers-reduced-motion:reduce){.ph-open img{transition:none}}
+@media (max-width:620px){.phgrid{columns:2 150px;column-gap:10px}.phgrid .ph{margin-bottom:10px}.ph figcaption{font-size:13px;padding:8px 10px}}
 /* problems */
 .pain-sec{background:#fff;padding:84px 0}
 .pain{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -395,7 +405,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
  <div class="wrap">
   <a class="mark" href="#main" aria-label="אמיר מרשה, לראש העמוד"><svg aria-hidden="true"><use href="#seal"/></svg><span><b>אמיר מרשה</b><small>AMIR MARSHA</small></span></a>
   <nav aria-label="ניווט ראשי"><ul class="menu" id="menu">
-   <li><a href="#about">מי אני</a></li><li><a href="#lectures">הרצאות</a></li><li><a href="#videos">סרטונים</a></li><li><a href="#values">תורה וערכים</a></li><li><a href="#testimonials">המלצות</a></li><li><a href="#magazine">כתבות</a></li><li><a href="#collab">שיתופי פעולה</a></li><li><a href="#contact">צור קשר</a></li>
+   <li><a href="#about">מי אני</a></li><li><a href="#lectures">הרצאות</a></li><li><a href="#videos">מהבמה</a></li><li><a href="#values">תורה וערכים</a></li><li><a href="#testimonials">המלצות</a></li><li><a href="#magazine">כתבות</a></li><li><a href="#collab">שיתופי פעולה</a></li><li><a href="#contact">צור קשר</a></li>
   </ul></nav>
   <a class="btn btn-p btn-s" href="#contact" style="background:var(--gold);color:var(--ink)">הזמנת הרצאה</a>
   <button class="burger" id="burger" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
@@ -504,14 +514,22 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 
 <section class="gallery" id="videos" aria-labelledby="hg">
  <div class="wrap">
-  <div class="sec-intro"><h2 id="hg">מתוך ההרצאות</h2><p>קטעים קצרים מהבמה. עוד סרטונים בטיקטוק <a href="https://vt.tiktok.com/ZSpKNUGWr/" target="_blank" rel="noopener"><span dir="ltr">@amirmarsha</span><span class="sr-only"> (נפתח בחלון חדש)</span></a>.</p></div>
-  <div class="videos" style="margin-top:0">
-   <figure><video controls playsinline preload="none" poster="img/poster-a2d198ac.jpg" aria-label="קטע מהרצאה, חלק ראשון"><source src="video/lecture-a2d198ac.mp4" type="video/mp4"></video><figcaption>חלק ראשון</figcaption></figure>
-   <figure><video controls playsinline preload="none" poster="img/poster-3e32db18.jpg" aria-label="קטע מהרצאה, חלק שני"><source src="video/lecture-3e32db18.mp4" type="video/mp4"></video><figcaption>חלק שני</figcaption></figure>
-   <figure><video controls playsinline preload="none" poster="img/poster-cea0054c.jpg" aria-label="קטע מהרצאה, חלק שלישי"><source src="video/lecture-cea0054c.mp4" type="video/mp4"></video><figcaption>חלק שלישי</figcaption></figure>
+  <div class="sec-intro"><h2 id="hg">מתוך ההרצאות</h2><p>רגעים מהבמה, מהכיתה ומהתקשורת. סרטונים מההרצאות תמצאו בטיקטוק <a href="https://vt.tiktok.com/ZSpKNUGWr/" target="_blank" rel="noopener"><span dir="ltr">@amirmarsha</span><span class="sr-only"> (נפתח בחלון חדש)</span></a>.</p></div>
+  <div class="phgrid">
+   <figure class="ph" data-full="img/slide-lecture.webp" data-cap="הרצאה מול קהל"><button type="button" class="ph-open" data-i="0" aria-label="הגדלת התמונה: הרצאה מול קהל"><img src="img/slide-lecture.webp" alt="הרצאה מול קהל" width="720" height="960" loading="lazy" decoding="async"></button><figcaption>הרצאה מול קהל</figcaption></figure>
+   <figure class="ph" data-full="img/gal-classroom.webp" data-cap="מפגש עם תלמידים"><button type="button" class="ph-open" data-i="1" aria-label="הגדלת התמונה: מפגש עם תלמידים"><img src="img/gal-classroom.webp" alt="מפגש עם תלמידים" width="1200" height="675" loading="lazy" decoding="async"></button><figcaption>מפגש עם תלמידים</figcaption></figure>
+   <figure class="ph" data-full="img/amir-lecture-hall.webp" data-cap="הרצאה באולם"><button type="button" class="ph-open" data-i="2" aria-label="הגדלת התמונה: הרצאה באולם"><img src="img/amir-lecture-hall.webp" alt="הרצאה באולם" width="1200" height="938" loading="lazy" decoding="async"></button><figcaption>הרצאה באולם</figcaption></figure>
+   <figure class="ph" data-full="img/amir-channel14.webp" data-cap="ראיון ב״מגזין הבוקר״, ערוץ 14"><button type="button" class="ph-open" data-i="3" aria-label="הגדלת התמונה: ראיון ב״מגזין הבוקר״, ערוץ 14"><img src="img/amir-channel14.webp" alt="ראיון ב״מגזין הבוקר״, ערוץ 14" width="1200" height="681" loading="lazy" decoding="async"></button><figcaption>ראיון ב״מגזין הבוקר״, ערוץ 14</figcaption></figure>
+   <figure class="ph" data-full="img/gal-sippur.webp" data-cap="״סיפור על דרך״, מרכזי הנוער OU ישראל"><button type="button" class="ph-open" data-i="4" aria-label="הגדלת התמונה: ״סיפור על דרך״, מרכזי הנוער OU ישראל"><img src="img/gal-sippur.webp" alt="״סיפור על דרך״, מרכזי הנוער OU ישראל" width="1024" height="1024" loading="lazy" decoding="async"></button><figcaption>״סיפור על דרך״, מרכזי הנוער OU ישראל</figcaption></figure>
+   <figure class="ph" data-full="img/amir-lecture-jerusalem.webp" data-cap="מתוך הרצאה"><button type="button" class="ph-open" data-i="5" aria-label="הגדלת התמונה: מתוך הרצאה"><img src="img/amir-lecture-jerusalem.webp" alt="מתוך הרצאה" width="1400" height="820" loading="lazy" decoding="async"></button><figcaption>מתוך הרצאה</figcaption></figure>
+   <figure class="ph" data-full="img/gal-sigd-derech.webp" data-cap="ערב חג הסיגד: שיחה על הדרך, דרך עמי"><button type="button" class="ph-open" data-i="6" aria-label="הגדלת התמונה: ערב חג הסיגד: שיחה על הדרך, דרך עמי"><img src="img/gal-sigd-derech.webp" alt="ערב חג הסיגד: שיחה על הדרך, דרך עמי" width="800" height="1200" loading="lazy" decoding="async"></button><figcaption>ערב חג הסיגד: שיחה על הדרך, דרך עמי</figcaption></figure>
+   <figure class="ph" data-full="img/gal-torat-moshe.webp" data-cap="חג הסיגד בבית הספר תורת משה"><button type="button" class="ph-open" data-i="7" aria-label="הגדלת התמונה: חג הסיגד בבית הספר תורת משה"><img src="img/gal-torat-moshe.webp" alt="חג הסיגד בבית הספר תורת משה" width="1179" height="600" loading="lazy" decoding="async"></button><figcaption>חג הסיגד בבית הספר תורת משה</figcaption></figure>
+   <figure class="ph" data-full="img/gal-ou-series.webp" data-cap="סדרת ההרצאות למנהיגות חינוכית, OU ישראל"><button type="button" class="ph-open" data-i="8" aria-label="הגדלת התמונה: סדרת ההרצאות למנהיגות חינוכית, OU ישראל"><img src="img/gal-ou-series.webp" alt="סדרת ההרצאות למנהיגות חינוכית, OU ישראל" width="1200" height="833" loading="lazy" decoding="async"></button><figcaption>סדרת ההרצאות למנהיגות חינוכית, OU ישראל</figcaption></figure>
+   <figure class="ph" data-full="img/gal-studio.webp" data-cap="באולפן הטלוויזיה"><button type="button" class="ph-open" data-i="9" aria-label="הגדלת התמונה: באולפן הטלוויזיה"><img src="img/gal-studio.webp" alt="באולפן הטלוויזיה" width="1200" height="900" loading="lazy" decoding="async"></button><figcaption>באולפן הטלוויזיה</figcaption></figure>
   </div>
  </div>
 </section>
+
 
 <section class="values" id="values" aria-labelledby="hv">
  <div class="wrap">
@@ -663,7 +681,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="תמונה מוגדלת">
- <span class="count" id="lbCount"></span>
+ <span class="count" id="lbCount" dir="ltr"></span>
  <button type="button" class="c x" id="lbClose" aria-label="סגירה">×</button>
  <button type="button" class="c pv" id="lbPrev" aria-label="התמונה הקודמת">›</button>
  <figure><img id="lbImg" src="data:," alt=""><figcaption id="lbCap"></figcaption></figure>
