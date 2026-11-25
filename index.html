@@ -93,6 +93,17 @@ p{max-width:64ch}
 .hero-ph .badge{position:absolute;top:22px;left:-18px;width:120px;height:120px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.35))}
 .hero-ph figcaption{position:absolute;bottom:18px;right:18px;background:#fff;padding:8px 14px;border-radius:10px;font-size:14.5px;color:var(--ink-2);box-shadow:0 8px 24px -12px rgba(14,26,43,.35)}
 
+/* partners marquee */
+.partners .wrap{display:block}
+.partners h2{margin:0 0 18px!important;text-align:center}
+.mq{overflow:hidden;direction:ltr;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.partners .mq-track{display:flex!important;flex-wrap:nowrap!important;gap:18px!important;width:max-content;list-style:none;margin:0;padding:4px 0;animation:mq 32s linear infinite}
+.mq:hover .mq-track,.mq:focus-within .mq-track{animation-play-state:paused}
+.partners li.lg{direction:rtl;flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:84px;min-width:170px;padding:12px 22px;background:#fff;border:1px solid var(--line);border-radius:14px;font-family:'Rubik',sans-serif;font-weight:600;font-size:16px;color:#0B0B0C;text-align:center}
+.partners li.lg img{max-height:56px;max-width:150px;width:auto;height:auto;object-fit:contain}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 9px))}}
+@media (prefers-reduced-motion:reduce){.partners .mq-track{animation:none;flex-wrap:wrap!important;width:auto;justify-content:center}.partners li.lg[aria-hidden]{display:none}}
+html.no-motion .partners .mq-track{animation:none}
 /* partners strip */
 .partners{background:var(--stone);padding:34px 0 40px;border-bottom:1px solid var(--line)}
 .partners .wrap{display:flex;gap:28px;align-items:baseline;flex-wrap:wrap}
@@ -337,7 +348,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 }
 @media (max-width:520px){
  .hero-ph .badge{display:none}
- .partners ul{display:grid!important;grid-template-columns:1fr 1fr}.partners li{text-align:center;font-size:15px;padding:9px 8px}
+
  .row,.facts{grid-template-columns:1fr}.facts div:nth-child(odd){padding-left:0}
  .ctas .btn{flex:1}
  .tform,.cform{padding:22px}
@@ -382,7 +393,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 </section>
 
 <section class="partners" aria-labelledby="ph" style="padding:34px 0 40px">
- <div class="wrap"><h2 id="ph">הופעות ושיתופי פעולה</h2><ul><li>ערוץ 14, מגזין הבוקר</li><li>מרכזי הנוער OU ישראל</li><li>מכללת אורות ישראל</li><li>רשת החוגים אינטליגנט</li><li>דרך עמי</li><li>בית הספר תורת משה</li></ul></div>
+ <div class="wrap"><h2 id="ph">הופעות ושיתופי פעולה</h2><div class="mq"><ul class="mq-track"><li class="lg"><span>ערוץ 14, מגזין הבוקר</span></li><li class="lg"><span>מרכזי הנוער OU ישראל</span></li><li class="lg"><span>מכללת אורות ישראל</span></li><li class="lg"><span>רשת החוגים אינטליגנט</span></li><li class="lg"><span>דרך עמי</span></li><li class="lg"><span>בית הספר תורת משה</span></li><li class="lg" aria-hidden="true"><span>ערוץ 14, מגזין הבוקר</span></li><li class="lg" aria-hidden="true"><span>מרכזי הנוער OU ישראל</span></li><li class="lg" aria-hidden="true"><span>מכללת אורות ישראל</span></li><li class="lg" aria-hidden="true"><span>רשת החוגים אינטליגנט</span></li><li class="lg" aria-hidden="true"><span>דרך עמי</span></li><li class="lg" aria-hidden="true"><span>בית הספר תורת משה</span></li></ul></div></div>
 </section>
 
 <section class="about" id="about" aria-labelledby="ha">
