@@ -246,29 +246,40 @@ p.onclick=function(e){var x=e.target.closest('button');if(!x)return;var a=x.data
 var nb=document.getElementById('navB');if(nb)nb.onclick=function(){var n=document.getElementById('mainNav'),o=n.classList.toggle('open');nb.setAttribute('aria-expanded',o)};})();</script>
 <!-- music -->
 <style>
-.mu-btn{position:fixed;left:28px;bottom:90px;z-index:90;width:44px;height:44px;border-radius:50%;border:1px solid #E9C46A;background:#0B0B0C;color:#E9C46A;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);padding:0}
+.mu-btn{position:fixed;left:28px;bottom:90px;z-index:90;width:44px;height:44px;border-radius:50%;border:1px solid #E9C46A;background:#0B0B0C;color:#E9C46A;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);padding:0;transition:transform .2s}
+.mu-btn:hover{transform:scale(1.06)}
 .mu-btn:focus-visible{outline:3px solid #E9C46A;outline-offset:3px}
 .mu-btn .bars{display:flex;gap:3px;align-items:flex-end;height:16px}
-.mu-btn .bars i{display:block;width:3px;height:5px;background:#E9C46A;border-radius:2px}
-.mu-btn[aria-pressed="true"] .bars i{animation:mub 1s ease-in-out infinite}
-.mu-btn[aria-pressed="true"] .bars i:nth-child(2){animation-delay:.2s}.mu-btn[aria-pressed="true"] .bars i:nth-child(3){animation-delay:.4s}.mu-btn[aria-pressed="true"] .bars i:nth-child(4){animation-delay:.1s}
-.mu-btn[aria-pressed="false"] .bars{opacity:.55}
+.mu-btn .bars i{display:block;width:3px;height:6px;background:#E9C46A;border-radius:2px}
+.mu-btn[aria-pressed="true"] .bars i{animation:mub 1.1s ease-in-out infinite}
+.mu-btn[aria-pressed="true"] .bars i:nth-child(2){animation-delay:.25s}.mu-btn[aria-pressed="true"] .bars i:nth-child(3){animation-delay:.5s}.mu-btn[aria-pressed="true"] .bars i:nth-child(4){animation-delay:.15s}
+.mu-btn[aria-pressed="false"] .bars{opacity:.5}
+.mu-btn[aria-pressed="false"]::after{content:"";position:absolute;width:24px;height:2px;background:#E9C46A;transform:rotate(-45deg);opacity:.8}
 @keyframes mub{0%,100%{height:4px}50%{height:16px}}
 @media (prefers-reduced-motion:reduce){.mu-btn .bars i{animation:none!important;height:10px!important}}
 html.no-motion .mu-btn .bars i{animation:none!important;height:10px!important}
 </style>
 <button type="button" class="mu-btn" id="muBtn" aria-pressed="false" aria-label="השמעת מוזיקת רקע" title="מוזיקת רקע"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
-<audio id="muAudio" src="audio/calm.mp3" loop preload="none"></audio>
+<audio id="muAudio" src="audio/ambient.mp3" loop preload="none"></audio>
 <script>
-(function(){var a=document.getElementById('muAudio'),b=document.getElementById('muBtn');if(!a||!b)return;a.volume=.28;
-function g(k){try{return localStorage.getItem(k)}catch(e){return null}}function s(k,v){try{localStorage.setItem(k,v)}catch(e){}}
-function ui(p){b.setAttribute('aria-pressed',p?'true':'false');b.setAttribute('aria-label',p?'עצירת מוזיקת הרקע':'השמעת מוזיקת רקע')}
-try{var t=parseFloat(sessionStorage.getItem('am_mu_t'));if(t>0)a.currentTime=t}catch(e){}
-function play(){var p=a.play();if(p&&p.then)p.then(function(){ui(true)}).catch(function(){ui(false)});else ui(true)}
-b.addEventListener('click',function(){if(a.paused){s('am_music','on');play()}else{a.pause();s('am_music','off');ui(false)}});
-window.addEventListener('pagehide',function(){try{sessionStorage.setItem('am_mu_t',a.currentTime)}catch(e){}});
-if(g('am_music')!=='off'){play();var f=function(e){if(e.target.closest&&e.target.closest('#muBtn'))return;if(a.paused&&g('am_music')!=='off')play();rm()};var rm=function(){['pointerdown','keydown','touchstart'].forEach(function(n){document.removeEventListener(n,f,true)})};['pointerdown','keydown','touchstart'].forEach(function(n){document.addEventListener(n,f,true)})}
+(function(){var a=document.getElementById('muAudio'),b=document.getElementById('muBtn');if(!a||!b)return;
+var VOL=.16,mob=window.matchMedia&&matchMedia('(pointer:coarse)').matches,fadeT;
+function g(k,st){try{return (st||localStorage).getItem(k)}catch(e){return null}}function s(k,v,st){try{(st||localStorage).setItem(k,v)}catch(e){}}
+function ui(p){b.setAttribute('aria-pressed',p?'true':'false');b.setAttribute('aria-label',p?'השתקת מוזיקת הרקע':'השמעת מוזיקת רקע');b.title=p?'השתקת מוזיקה':'השמעת מוזיקה'}
+function fade(to,cb){clearInterval(fadeT);fadeT=setInterval(function(){var v=a.volume+(to>a.volume?.01:-.02);if((to>a.volume&&v>=to)||(to<=a.volume&&v<=to)){a.volume=Math.max(0,to);clearInterval(fadeT);cb&&cb()}else a.volume=Math.max(0,Math.min(1,v))},60)}
+function play(){a.volume=0;var t=parseFloat(g('am_mu_t',sessionStorage));if(t>0&&!a.currentTime){try{a.currentTime=t}catch(e){}}
+ var p=a.play();if(p&&p.then)p.then(function(){ui(true);fade(VOL)}).catch(function(){ui(false)});else{ui(true);fade(VOL)}}
+function stop(){fade(0,function(){a.pause()});ui(false)}
+b.addEventListener('click',function(){if(a.paused||b.getAttribute('aria-pressed')!=='true'){s('am_music','on');play()}else{s('am_music','off');stop()}});
+function save(){try{if(!a.paused)sessionStorage.setItem('am_mu_t',a.currentTime)}catch(e){}}
+window.addEventListener('pagehide',save);setInterval(save,2000);
+document.addEventListener('visibilitychange',function(){if(document.hidden&&!a.paused){a.pause();a._v=1}else if(!document.hidden&&a._v){a._v=0;play()}});
+var pref=g('am_music');
+// desktop: start unless the visitor turned it off. mobile: only after the visitor chose to turn it on.
+var auto=mob?(pref==='on'):(pref!=='off');
+if(auto){play();var ev=['pointerdown','keydown','touchend'],f=function(e){if(e.target.closest&&e.target.closest('#muBtn')){rm();return}if(a.paused&&g('am_music')!=='off')play();rm()},rm=function(){ev.forEach(function(n){document.removeEventListener(n,f,true)})};ev.forEach(function(n){document.addEventListener(n,f,true)})}
 })();
 </script>
+<!-- /music -->
 </body>
 </html>
