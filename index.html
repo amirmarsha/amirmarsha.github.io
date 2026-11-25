@@ -93,6 +93,19 @@ p{max-width:64ch}
 .hero-ph .badge{position:absolute;top:22px;left:-18px;width:120px;height:120px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.35))}
 .hero-ph figcaption{position:absolute;bottom:18px;right:18px;background:#fff;padding:8px 14px;border-radius:10px;font-size:14.5px;color:var(--ink-2);box-shadow:0 8px 24px -12px rgba(14,26,43,.35)}
 
+/* pain-solution-value */
+.hero .claim{font-family:'Rubik',sans-serif;font-weight:700;font-size:clamp(22px,3vw,30px);line-height:1.3;color:#E9C46A;margin:6px 0 14px}
+.pv-sec{background:var(--stone);padding:84px 0}
+.pv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pv>div{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:var(--r);padding:28px}
+.pv .k{font-family:'Assistant',sans-serif;font-weight:700;font-size:14px;color:#7A5C12;margin:0 0 4px}
+.pv h3{font-family:'Rubik',sans-serif;font-size:21px;line-height:1.3;margin:0 0 14px;color:#0B0B0C}
+.pv ul{margin:0;padding:0 18px 0 0;display:grid;gap:8px}
+.pv li{color:var(--ink-2);line-height:1.6}
+.pv p{margin:14px 0 0;color:#0B0B0C;font-weight:600}
+.pv-cta{margin-top:30px;text-align:center}
+@media (max-width:900px){.pv{grid-template-columns:1fr}.pv-sec{padding:60px 0}}
+@media (max-width:560px){.hero .ctas{flex-direction:column;align-items:stretch}.hero .ctas .btn{width:100%;justify-content:center;text-align:center}}
 /* partners marquee */
 .partners .wrap{display:block}
 .partners h2{margin:0 0 14px!important;text-align:center!important;width:100%;font-family:'Rubik',sans-serif!important;font-size:24px!important;font-weight:700!important;color:#0B0B0C!important}
@@ -385,8 +398,9 @@ html.no-motion .route .draw{stroke-dashoffset:0}
   <div class="hero-t">
    <p class="role">AMIR MARSHA · לצמוח.</p>
    <h1 id="h1">אמיר מרשה</h1>
-   <p class="lead">איש חינוך, מרצה ויזם, שמביא לבמה ניסיון חינוכי עשיר, חשיבה יזמית וסיפור אישי שמתחבר לכל קהל. הרצאות השראה, מנהיגות ויזמות לבני נוער, למבוגרים ולארגונים, המבוססות על שנים של עבודה בשטח ומסתיימות בכלים מעשיים להמשך.</p>
-   <div class="ctas"><a class="btn btn-p" href="#contact">הזמנת הרצאה</a><a class="btn btn-o" href="https://vt.tiktok.com/ZSpKNUGWr/" target="_blank" rel="noopener">עקבו בטיקטוק<span class="sr-only"> (נפתח בחלון חדש)</span></a></div>
+   <p class="claim">מחבר בין רעיונות לאנשים, ובין חזון למציאות.</p>
+   <p class="lead">אני אמיר מרשה, איש חינוך, מרצה ויזם. אני מאמין שאפשר לצמוח מתוך חינוך, ידע, יזמות וערכים. בהרצאות, באירועים ובמיזמים שאני מוביל, אני הופך רעיונות לכלים מעשיים עבור תלמידים, צוותים, ארגונים וקהילות.</p>
+   <div class="ctas"><a class="btn btn-p" href="#contact">להזמנת הרצאה או שיתוף פעולה</a><a class="btn btn-o" href="#about">להכיר את העשייה שלי</a></div>
    <div class="chipsrow" aria-label="תחומים"><span>חינוך</span><span>הרצאות</span><span>יזמות</span><span>תוכן ערכי</span></div>
   </div>
   <figure class="hero-ph"><img src="img/hero-portrait.webp" alt="אמיר מרשה, מרצה ויזם" width="900" height="1125" fetchpriority="high"><svg class="badge" aria-hidden="true"><use href="#seal"/></svg></figure>
@@ -397,19 +411,33 @@ html.no-motion .route .draw{stroke-dashoffset:0}
  <div class="wrap"><h2 id="ph">הופעות ושיתופי פעולה</h2><div class="mq"><ul class="mq-track"><li class="lg"><img src="img/logo-hagefen.webp" alt="" width="366" height="400" loading="lazy"><span class="cap">קהילת הגפן</span></li><li class="lg"><img src="img/logo-police.webp" alt="" width="194" height="177" loading="lazy"><span class="cap">משטרת ישראל</span></li><li class="lg"><img src="img/logo-c14.webp" alt="" width="420" height="420" loading="lazy"><span class="cap">ערוץ 14</span></li><li class="lg"><img src="img/logo-ou.webp" alt="" width="420" height="263" loading="lazy"><span class="cap">OU ישראל</span></li><li class="lg"><img src="img/logo-orot.webp" alt="" width="410" height="420" loading="lazy"><span class="cap">מכללת אורות ישראל</span></li><li class="lg"><img src="img/logo-intelligent.webp" alt="" width="415" height="392" loading="lazy"><span class="cap">רשת החוגים אינטליגנט</span></li><li class="lg"><span>דרך עמי</span></li><li class="lg"><span>בית הספר תורת משה</span></li><li class="lg" aria-hidden="true"><img src="img/logo-hagefen.webp" alt="" width="366" height="400" loading="lazy"><span class="cap">קהילת הגפן</span></li><li class="lg" aria-hidden="true"><img src="img/logo-police.webp" alt="" width="194" height="177" loading="lazy"><span class="cap">משטרת ישראל</span></li><li class="lg" aria-hidden="true"><img src="img/logo-c14.webp" alt="" width="420" height="420" loading="lazy"><span class="cap">ערוץ 14</span></li><li class="lg" aria-hidden="true"><img src="img/logo-ou.webp" alt="" width="420" height="263" loading="lazy"><span class="cap">OU ישראל</span></li><li class="lg" aria-hidden="true"><img src="img/logo-orot.webp" alt="" width="410" height="420" loading="lazy"><span class="cap">מכללת אורות ישראל</span></li><li class="lg" aria-hidden="true"><img src="img/logo-intelligent.webp" alt="" width="415" height="392" loading="lazy"><span class="cap">רשת החוגים אינטליגנט</span></li><li class="lg" aria-hidden="true"><span>דרך עמי</span></li><li class="lg" aria-hidden="true"><span>בית הספר תורת משה</span></li></ul></div></div>
 </section>
 
+<section class="pv-sec" id="why" aria-labelledby="hw">
+ <div class="wrap">
+  <div class="sec-intro"><h2 id="hw">הפער שאני בא לסגור</h2><p>אני פוגש אותו כל יום: בכיתה, בחדר המורים ובשיחות עם יזמים וארגונים. יש רעיונות טובים, יש אנשים מוכשרים ויש רצון. מה שחסר הוא הגשר ביניהם.</p></div>
+  <div class="pv">
+   <div><p class="k">האתגר</p><h3>רעיונות טובים נתקעים בדרך</h3><ul><li>פער בין רעיון טוב לביצוע בפועל</li><li>מערכות חינוך שצריכות חדשנות וכלים מעשיים, לא עוד סיסמאות</li><li>אנשים עם פוטנציאל שלא תמיד מקבלים הזדמנות לממש אותו</li><li>יזמים וארגונים שמתקשים להפוך חזון לתוכנית עבודה</li><li>נתק בין ערכים, ידע, טכנולוגיה ועשייה</li></ul></div>
+   <div><p class="k">מה אני מביא</p><h3>חיבור בין שלושה עולמות</h3><ul><li><strong>חינוך:</strong> הוראה והובלת אנשים</li><li><strong>יזמות:</strong> פיתוח רעיונות והוצאה לפועל</li><li><strong>ערכים:</strong> זהות, השראה ותוכן משמעותי</li></ul><p>לא מספיק לדבר על שינוי. צריך לבנות תהליך, לייצר כלים ולבצע.</p></div>
+   <div><p class="k">למה לעבוד איתי</p><h3>ניסיון מהשטח, לא מהמצגת</h3><ul><li>ניסיון מעשי כמחנך, רכז שכבה ומנהל</li><li>חשיבה יזמית ויכולת לזהות הזדמנויות</li><li>מסרים ברורים ורעיונות נגישים לכל קהל</li><li>חיבור בין אנשים, מערכות וטכנולוגיה</li><li>מבט רחב לצד ירידה לפרטים</li><li>ערכים, מקצועיות ותוצאות, יחד</li></ul></div>
+  </div>
+  <p class="pv-cta"><a class="btn btn-p" href="#contact">בואו נדבר על האתגר שלכם</a></p>
+ </div>
+</section>
+
 <section class="about" id="about" aria-labelledby="ha">
  <div class="wrap">
   <figure class="about-ph"><img src="img/amir-field.webp" alt="אמיר מרשה, איש חינוך, מרצה ויזם" style="object-position:50% 20%" loading="lazy" width="900" height="1350"></figure>
   <div class="about-txt">
-   <h2 id="ha">מי זה אמיר מרשה</h2>
-   <p class="intro-big">אמיר מרשה הוא מרצה, יזם ואיש חינוך עם ניסיון של שנים בהובלת בני נוער, צוותים וקהילות.</p>
-   <p>הוא שימש סמנכ״ל ברשת החוגים הארצית אינטליגנט, ניהל גרעין תורני ברחובות, הוביל תוכנית במכללת אורות ישראל, וכיום מחנך ורכז שכבה. מי שעומד מול בני נוער כל יום יודע מה באמת נוגע בהם, ואת זה בדיוק אמיר מביא לבמה.</p>
-   <p>ההרצאות שלו משלבות סיפור אישי, הומור ותובנות מעשיות. הן הועברו בבתי ספר, בתנועות נוער, בערבי קהילה ובארגונים, ונכללו בסדרת ההרצאות למנהיגות חינוכית של מרכזי הנוער OU ישראל. הוא גם התארח ב״מגזין הבוקר״ בערוץ 14.</p>
-   <p>לצד הבמה, אמיר בונה מיזמים בתחומי הבינה המלאכותית והעסקים. מבחינתו, יזמות היא קודם כל דרך חשיבה: לראות בעיה ולצאת לפתור אותה.</p>
-   <p>נשוי לאביה, צלמת מקצועית ואלופת עולם, אבא לארבעה, ומתגורר באשקלון.</p>
+   <h2 id="ha">אני אמיר מרשה</h2>
+   <p class="intro-big">איש חינוך, מרצה ויזם. ובעיקר, מישהו שאוהב לקחת רעיון ולהפוך אותו למשהו שקורה בפועל.</p>
+   <p>לאורך השנים עסקתי בחינוך ובהובלת אנשים. ניהלתי גרעין תורני ברחובות, הובלתי תוכנית במכללת אורות ישראל ושימשתי סמנכ״ל ברשת החוגים הארצית אינטליגנט. היום אני מחנך כיתה ט׳ ורכז שכבה, ועומד מול בני נוער כל יום. מי שנמצא בכיתה יודע מה באמת נוגע בהם, ואת זה אני מביא לבמה.</p>
+   <p>את הדרך החינוכית שלי התחלתי כחניך במרכזי הנוער OU ישראל, ובהמשך ההרצאה שלי ״סיפור על דרך״ נכללה בסדרת ההרצאות שלהם למנהיגות חינוכית. הרציתי בבתי ספר, בתנועות נוער, בערבי קהילה ובארגונים, בהם משטרת ישראל בקריית גת, והתארחתי ב״מגזין הבוקר״ בערוץ 14.</p>
+   <p>מה שלמדתי מהדרך: אנשים לא משתנים מנאום. הם משתנים כשמישהו מאמין בהם, נותן להם כלים ועומד לצידם בצעד הראשון.</p>
+   <p>היום אני פועל בכמה מסלולים במקביל: מרצה לבני נוער, למבוגרים ולארגונים, יוזם ומפיק אירועים חינוכיים בבתי ספר, מוביל יוזמות סביב מורשת יהדות אתיופיה, ובונה מיזמים בתחומי הבינה המלאכותית והעסקים. בשבילי יזמות היא קודם כל דרך חשיבה: לראות בעיה ולצאת לפתור אותה.</p>
+   <p><strong>החזון שלי:</strong> לחבר בין רעיונות לאנשים ובין חזון למציאות. לצמוח, ולעזור לאחרים לצמוח איתי.</p>
+   <p>אני נשוי לאביה, צלמת מקצועית ואלופת עולם, אבא לארבעה, וגר באשקלון.</p>
    <dl class="facts">
     <div><dt>במה</dt><dd>הרצאות לנוער, למבוגרים ולארגונים</dd></div>
-    <div><dt>ניהול</dt><dd>סמנכ״ל ברשת החוגים הארצית אינטליגנט</dd></div>
+    <div><dt>ניהול</dt><dd>סמנכ״ל לשעבר ברשת החוגים הארצית אינטליגנט</dd></div>
     <div><dt>חינוך</dt><dd>מחנך ורכז שכבה, ניהול תוכנית במכללת אורות ישראל</dd></div>
     <div><dt>יזמות</dt><dd>מיזמים בתחומי בינה מלאכותית ועסקים</dd></div>
    </dl>
@@ -420,7 +448,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 
 <section class="lectures" id="lectures" aria-labelledby="hl">
  <div class="wrap">
-  <div class="sec-intro"><h2 id="hl">הרצאות</h2><p>לבני נוער ולמבוגרים, לבתי ספר, ארגונים, חברות וקהילות. כל הרצאה מותאמת לגיל, לקהל ולמטרה של האירוע. <a href="lectures.html">כל ההרצאות והשאלות הנפוצות</a></p></div>
+  <div class="sec-intro"><h2 id="hl">הרצאות</h2><p>אני מתאים כל הרצאה לגיל, לקהל ולמטרה של האירוע: בני נוער ומבוגרים, בתי ספר, ארגונים, חברות וקהילות. <a href="lectures.html">כל ההרצאות והשאלות הנפוצות</a></p></div>
     <div class="finder" id="finder" aria-labelledby="hf">
    <h3 id="hf">איזו הרצאה מתאימה לכם?</h3>
    <p class="fsub">שתי בחירות, והמלצה מוכנה.</p>
@@ -436,7 +464,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
    <div class="lec-a"><a class="btn btn-p btn-s" href="#contact" data-topic="לצמוח מכל דרך">הזמנת ההרצאה</a><a class="lnk" href="empowerment.html">לפרטים נוספים</a></div></div>
   </article><article class="lec">
    <img src="img/amir-lecture-jerusalem.webp" alt="אמיר מרשה מרצה מול תלמידים" loading="lazy">
-   <div class="lec-b"><h3>מנהיגות שמתחילה בי</h3><p>ערכים, אחריות והשפעה: איך כל אחד יכול להוביל, בכיתה, בצוות ובקהילה. מבוססת על שנים של עבודה חינוכית בשטח.</p><p class="aud"><span class="sr-only">מתאים ל: </span>בני נוער, צוותי חינוך, מנהלים וארגונים</p>
+   <div class="lec-b"><h3>מנהיגות שמתחילה בי</h3><p>ערכים, אחריות והשפעה: איך כל אחד יכול להוביל, בכיתה, בצוות ובקהילה. מתוך שנים שבהן אני מוביל תלמידים וצוותים.</p><p class="aud"><span class="sr-only">מתאים ל: </span>בני נוער, צוותי חינוך, מנהלים וארגונים</p>
    <div class="lec-a"><a class="btn btn-p btn-s" href="#contact" data-topic="מנהיגות שמתחילה בי">הזמנת ההרצאה</a><a class="lnk" href="lectures.html">לפרטים נוספים</a></div></div>
   </article><article class="lec">
    <img src="img/p-friend.webp" alt="אמיר מרשה" loading="lazy">
@@ -463,7 +491,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 
 <section class="values" id="values" aria-labelledby="hv">
  <div class="wrap">
-  <div class="sec-intro"><h2 id="hv">תורה, ערכים ומורשת</h2><p>תוכן ערכי לבית, לכיתה ולשולחן השבת.</p></div>
+  <div class="sec-intro"><h2 id="hv">תורה, ערכים ומורשת</h2><p>תוכן ערכי שאני כותב ומלמד: לבית, לכיתה ולשולחן השבת.</p></div>
   <div class="vgrid">
    <a class="vcard" href="article-torah-connection.html"><b>לגדל ילדים עם חיבור לתורה</b><span>מאהבה, מדוגמה ומשייכות</span></a>
    <a class="vcard" href="article-vayishlach.html"><b>פרשת וישלח</b><span>השם החדש נולד מתוך המאבק</span></a>
@@ -475,12 +503,12 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 
 <section class="values" id="ventures" aria-labelledby="hvn" style="background:#fff">
  <div class="wrap">
-  <div class="sec-intro"><h2 id="hvn">יזמות והפקות</h2><p>מעבר להרצאות: אירועים, יוזמות ומיזמים שאמיר מוביל.</p></div>
+  <div class="sec-intro"><h2 id="hvn">יזמות והפקות</h2><p>מעבר להרצאות, אלה הדברים שאני יוזם, מפיק ומוביל.</p></div>
   <div class="vgrid">
    <a class="vcard" href="entrepreneurship.html#events"><b>הפקות ואירועים בבתי ספר</b><span>ערבי שכבה, ימי שיא, טקסים ואירועי מורשת, מהרעיון ועד הביצוע</span></a>
    <a class="vcard" href="entrepreneurship.html#heritage"><b>יוזמות מורשת יהדות אתיופיה</b><span>אירועי חג הסיגד ומפגשים על זהות ושורשים, לכל תלמיד</span></a>
    <a class="vcard" href="entrepreneurship.html"><b>יזמות וטכנולוגיה</b><span>מיזמים בתחומי הבינה המלאכותית ומערכות אוטומטיות</span></a>
-   <a class="vcard" href="index.html#collab"><b>שיתופי פעולה</b><span>לארגונים, מותגים ועסקים שרוצים להגיע לנוער ולקהילה</span></a>
+   <a class="vcard" href="entrepreneurship.html#consulting"><b>ייעוץ לארגונים וקהילות</b><span>מרעיון לתוכנית עבודה, ומתוכנית לצעד הראשון</span></a>
   </div>
  </div>
 </section>
@@ -523,7 +551,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 
 <section class="magazine" id="magazine" aria-labelledby="hm">
  <div class="wrap">
-  <div class="sec-intro"><h2 id="hm">כתבות</h2><p>מאמרים מאת אמיר מרשה על חינוך, רטוריקה, יזמות וכלכלת המשפחה.</p></div>
+  <div class="sec-intro"><h2 id="hm">כתבות</h2><p>מאמרים שכתבתי על חינוך, רטוריקה, יזמות וכלכלת המשפחה.</p></div>
   
   <div class="arts" id="arts" aria-live="polite"><article class="art" data-cat="חינוך"><p class="cat">חינוך</p><h3><a href="article-trust.html">אמון: הבסיס שעליו בונים חינוך</a></h3><p>ילד שמרגיש שסומכים עליו, מתחיל לסמוך על עצמו.</p></article><article class="art" data-cat="רטוריקה"><p class="cat">רטוריקה</p><h3><a href="article-strong-opening.html">איך פותחים הרצאה כך שהקהל איתך</a></h3><p>חמש דרכים לתפוס את הקהל בחצי הדקה הראשונה.</p></article><article class="art" data-cat="יזמות"><p class="cat">יזמות</p><h3><a href="article-youth-entrepreneurship.html">יזמות מתחילה בבעיה קטנה</a></h3><p>איך מלמדים בני נוער לחשוב כמו יזמים.</p></article></div>
   <p style="margin-top:26px"><a class="btn btn-o btn-s" href="articles.html">לכל הכתבות</a> <a class="lnk" href="tools.html" style="margin-right:16px">כלים: מחשבוני חיסכון ונאום</a></p>
@@ -537,8 +565,8 @@ html.no-motion .route .draw{stroke-dashoffset:0}
   <div>
    <p class="prem">שיתופי פעולה</p>
    <h2 id="hc">שותפות עם חברות, מותגים וארגונים</h2>
-   <p>אמיר פתוח לשיתופי פעולה מובחרים עם חברות, מותגים, ארגונים ויזמים שמחפשים פנים אמינות, מסר ערכי וחיבור אמיתי לקהל: בני נוער, משפחות, אנשי חינוך וקהילות בכל הארץ.</p>
-   <p>מאחוריו ניסיון ניהולי כסמנכ״ל ברשת החוגים הארצית אינטליגנט, הובלת תוכניות במכללת אורות ישראל, ועבודה עם מרכזי הנוער OU ישראל, דרך עמי ובתי ספר.</p>
+   <p>אני פתוח לשיתופי פעולה מובחרים עם חברות, מותגים, ארגונים ויזמים שמחפשים פנים אמינות, מסר ערכי וחיבור אמיתי לקהל: בני נוער, משפחות, אנשי חינוך וקהילות בכל הארץ.</p>
+   <p>מאחוריי ניסיון ניהולי כסמנכ״ל ברשת החוגים הארצית אינטליגנט, הובלת תוכנית במכללת אורות ישראל, ועבודה עם מרכזי הנוער OU ישראל, דרך עמי ובתי ספר.</p>
    <div class="ctas" style="margin-top:28px"><a class="btn btn-p" href="#contact" data-topic="שיתוף פעולה עסקי / מותג">לתיאום פגישת היכרות</a><a class="btn btn-o" href="https://wa.me/972526543890" target="_blank" rel="noopener">וואטסאפ<span class="sr-only"> (נפתח בחלון חדש)</span></a></div>
   </div>
   <ul class="ways">
@@ -581,7 +609,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
    </div>
    <label for="f-msg">הודעה <span class="req" aria-hidden="true">*</span></label>
    <textarea id="f-msg" maxlength="1000" aria-required="true" aria-describedby="e-msg"></textarea><span class="err" id="e-msg" role="alert"></span>
-   <div class="check"><input type="checkbox" id="f-consent" aria-describedby="e-consent"><label for="f-consent">קראתי את <a href="#privacy">מדיניות הפרטיות</a> ומסכים/ה שהפרטים יועברו לאמיר בוואטסאפ לצורך מענה. <span class="req" aria-hidden="true">*</span></label></div>
+   <div class="check"><input type="checkbox" id="f-consent" aria-describedby="e-consent"><label for="f-consent">קראתי את <a href="#privacy">מדיניות הפרטיות</a> ומסכים/ה שהפרטים יועברו אליי בוואטסאפ לצורך מענה. <span class="req" aria-hidden="true">*</span></label></div>
    <span class="err" id="e-consent" role="alert"></span>
    <div class="ctas"><button type="submit" class="btn btn-p">שליחה בוואטסאפ</button><button type="button" class="btn btn-o" id="copyMsg">העתקת ההודעה</button></div>
    <div class="ok" id="formOk" role="status" tabindex="-1"></div>
