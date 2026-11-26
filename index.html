@@ -435,6 +435,46 @@ html.no-motion .route .draw{stroke-dashoffset:0}
  .tform,.cform{padding:22px}
  .grid{columns:1}
 }
+
+/* journey */
+.jr{background:#0B0B0C;color:#EDE6D6;padding:92px 0 84px;position:relative;overflow:hidden}
+.jr::before{content:"";position:absolute;inset:auto 0 0 0;height:46%;background:radial-gradient(120% 90% at 70% 100%,rgba(201,140,60,.20),transparent 70%);pointer-events:none}
+.jr .wrap{position:relative}
+.jr-top{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:end}
+.jr h2{color:#fff;font-size:clamp(34px,5.4vw,62px);line-height:1.05;margin:0 0 22px;letter-spacing:-.02em}
+.jr h2 span{display:block;color:#E9C46A}
+.jr-lead{font-size:20px;line-height:1.8;color:#D9D2C3;max-width:640px;margin:0}
+.jr-stat{border-right:3px solid #E9C46A;padding:6px 22px 6px 0}
+.jr-stat b{display:block;font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(56px,8vw,96px);line-height:1;color:#E9C46A}
+.jr-stat p{margin:10px 0 0;color:#CFC7B6;font-size:16px;line-height:1.6}
+.jr-road{list-style:none;margin:70px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.jr-road::before{content:"";position:absolute;top:13px;right:13px;left:13px;height:2px;background:repeating-linear-gradient(270deg,#E9C46A 0 10px,transparent 10px 18px);transform:scaleX(0);transform-origin:right;transition:transform 2.4s cubic-bezier(.6,.1,.2,1)}
+.jr-road.on::before{transform:scaleX(1)}
+.jr-road li{position:relative;padding-top:44px;opacity:.25;transition:opacity .6s}
+.jr-road.on li{opacity:1}
+.jr-road.on li:nth-child(2){transition-delay:.6s}.jr-road.on li:nth-child(3){transition-delay:1.2s}.jr-road.on li:nth-child(4){transition-delay:1.8s}
+.jr-road li::before{content:"";position:absolute;top:4px;right:4px;width:20px;height:20px;border-radius:50%;background:#0B0B0C;border:2px solid #E9C46A}
+.jr-road li:last-child::before{background:#E9C46A;box-shadow:0 0 0 6px rgba(233,196,106,.18)}
+.jr-road small{display:block;color:#E9C46A;font-weight:700;font-size:14px;margin-bottom:4px}
+.jr-road h3{color:#fff;font-size:22px;margin:0 0 8px}
+.jr-road p{margin:0;color:#BDB5A4;font-size:16px;line-height:1.65}
+.jr-bot{display:grid;grid-template-columns:1fr 300px;gap:56px;margin-top:76px;padding-top:56px;border-top:1px solid rgba(233,196,106,.22);align-items:start}
+.jr-bot h3{color:#fff;font-size:26px;margin:0 0 22px}
+.jr-take{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:0 0 34px;padding:0;list-style:none}
+.jr-take b{display:block;color:#E9C46A;font-family:'Rubik',sans-serif;font-size:19px;margin-bottom:6px}
+.jr-take span{color:#CFC7B6;font-size:16px;line-height:1.65}
+.jr-fit{color:#D9D2C3;font-size:17px;margin:0 0 24px}
+.jr .btn-p{background:#E9C46A;color:#0B0B0C}
+.jr-proof{margin:0}
+.jr-proof img{width:100%;height:auto;border-radius:14px;display:block;box-shadow:0 24px 60px -24px rgba(0,0,0,.9);transform:rotate(-2deg)}
+.jr-proof figcaption{color:#A9A193;font-size:14px;margin-top:14px;line-height:1.5}
+@media (max-width:900px){.jr-top,.jr-bot{grid-template-columns:1fr;gap:34px}.jr-take{grid-template-columns:1fr;gap:18px}.jr-proof{max-width:300px}}
+@media (max-width:760px){.jr{padding:64px 0}
+.jr-road{grid-template-columns:1fr;gap:28px;margin-top:48px;padding-right:44px}
+.jr-road::before{top:13px;bottom:13px;right:13px;left:auto;width:2px;height:auto;background:repeating-linear-gradient(180deg,#E9C46A 0 10px,transparent 10px 18px);transform:scaleY(0);transform-origin:top}
+.jr-road.on::before{transform:scaleY(1)}
+.jr-road li{padding-top:0}.jr-road li::before{top:4px;right:-40px}}
+@media (prefers-reduced-motion:reduce){.jr-road::before{transform:none!important}.jr-road li{opacity:1}}
 </style>
 </head>
 <body>
@@ -452,7 +492,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
  <div class="wrap">
   <a class="mark" href="#main" aria-label="אמיר מרשה, לראש העמוד"><svg aria-hidden="true"><use href="#seal"/></svg><span><b>אמיר מרשה</b><small>AMIR MARSHA</small></span></a>
   <nav aria-label="ניווט ראשי"><ul class="menu" id="menu">
-   <li><a href="#about">מי אני</a></li><li><a href="#lectures">הרצאות</a></li><li><a href="#seminars">שבתות וימי עיון</a></li><li><a href="#testimonials">המלצות</a></li><li><a href="#videos">מהבמה</a></li><li><a href="articles.html">כתבות</a></li><li><a href="#contact">צור קשר</a></li>
+   <li><a href="#about">מי אני</a></li><li><a href="#journey">סיפור הדרך</a></li><li><a href="#lectures">הרצאות</a></li><li><a href="#seminars">שבתות וימי עיון</a></li><li><a href="#testimonials">המלצות</a></li><li><a href="#videos">מהבמה</a></li><li><a href="articles.html">כתבות</a></li><li><a href="#contact">צור קשר</a></li>
   </ul></nav>
   <a class="btn btn-p btn-s" href="#contact" style="background:var(--gold);color:var(--ink)">הזמנת הרצאה</a>
   <button class="burger" id="burger" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
@@ -477,6 +517,45 @@ html.no-motion .route .draw{stroke-dashoffset:0}
 
 <section class="partners" aria-labelledby="ph" style="padding:34px 0 40px">
  <div class="wrap"><h2 id="ph">הרציתי והופעתי ב־</h2><div class="mq"><ul class="mq-track"><li class="lg"><img src="img/logo-hagefen.webp" alt="" width="366" height="400" loading="lazy"><span class="cap">קהילת הגפן</span></li><li class="lg"><img src="img/logo-police.webp" alt="" width="194" height="177" loading="lazy"><span class="cap">משטרת ישראל</span></li><li class="lg"><img src="img/logo-c14.webp" alt="" width="420" height="420" loading="lazy"><span class="cap">ערוץ 14</span></li><li class="lg"><img src="img/logo-ou.webp" alt="" width="420" height="263" loading="lazy"><span class="cap">OU ישראל</span></li><li class="lg"><img src="img/logo-orot.webp" alt="" width="410" height="420" loading="lazy"><span class="cap">מכללת אורות ישראל</span></li><li class="lg"><img src="img/logo-intelligent.webp" alt="" width="415" height="392" loading="lazy"><span class="cap">רשת החוגים אינטליגנט</span></li><li class="lg"><span>דרך עמי</span></li><li class="lg"><span>בית הספר תורת משה</span></li><li class="lg" aria-hidden="true"><img src="img/logo-hagefen.webp" alt="" width="366" height="400" loading="lazy"><span class="cap">קהילת הגפן</span></li><li class="lg" aria-hidden="true"><img src="img/logo-police.webp" alt="" width="194" height="177" loading="lazy"><span class="cap">משטרת ישראל</span></li><li class="lg" aria-hidden="true"><img src="img/logo-c14.webp" alt="" width="420" height="420" loading="lazy"><span class="cap">ערוץ 14</span></li><li class="lg" aria-hidden="true"><img src="img/logo-ou.webp" alt="" width="420" height="263" loading="lazy"><span class="cap">OU ישראל</span></li><li class="lg" aria-hidden="true"><img src="img/logo-orot.webp" alt="" width="410" height="420" loading="lazy"><span class="cap">מכללת אורות ישראל</span></li><li class="lg" aria-hidden="true"><img src="img/logo-intelligent.webp" alt="" width="415" height="392" loading="lazy"><span class="cap">רשת החוגים אינטליגנט</span></li><li class="lg" aria-hidden="true"><span>דרך עמי</span></li><li class="lg" aria-hidden="true"><span>בית הספר תורת משה</span></li></ul></div></div>
+</section>
+
+<section class="jr" id="journey" aria-labelledby="hj">
+ <div class="wrap">
+  <div class="jr-top">
+   <div>
+    <h2 id="hj">מאתיופיה לירושלים <span>דרך מדבר סודן</span></h2>
+    <p class="jr-lead">אני בן להורים יוצאי אתיופיה, וזה הסיפור של הקהילה שלי: דורות שהתפללו על ירושלים, אנשים שקמו ויצאו ברגל אל הלא נודע, וההמתנה הארוכה עד שהגיעו הביתה. אני מספר אותו מהבמה, כי אין סיפור שמלמד טוב יותר מה זה אמון ומה זו תקווה.</p>
+   </div>
+   <div class="jr-stat">
+    <b>כ־4,000</b>
+    <p>בני הקהילה נספו בדרך ובמחנות בסודן ולא זכו להגיע. מדינת ישראל מציינת את זכרם בכל שנה ביום ירושלים.</p>
+   </div>
+  </div>
+
+  <ol class="jr-road" id="jrRoad" aria-label="מסלול המסע">
+   <li><small>היציאה</small><h3>הכפרים באתיופיה</h3><p>עוזבים בית, אדמה ושכנים, עם חלום אחד בלב: ירושלים.</p></li>
+   <li><small>המסע</small><h3>הדרך במדבר</h3><p>שבועות של הליכה ברגל, רעב, מחלות וסכנה בכל צעד.</p></li>
+   <li><small>ההמתנה</small><h3>המחנות בסודן</h3><p>חודשים ולפעמים שנים של המתנה, בלי לדעת מתי ואם בכלל.</p></li>
+   <li><small>הבית</small><h3>ישראל</h3><p>הרגע שבו החלום נוגע בקרקע, וההתחלה החדשה שהוא דורש.</p></li>
+  </ol>
+
+  <div class="jr-bot">
+   <div>
+    <h3>מה הקהל לוקח מהסיפור הזה</h3>
+    <ul class="jr-take">
+     <li><b>אמון</b><span>ללכת אחרי חלום גם כשאין שום הבטחה שתגיע.</span></li>
+     <li><b>תקווה</b><span>להחזיק מעמד דווקא בהמתנה הארוכה, כשנדמה שכלום לא זז.</span></li>
+     <li><b>שייכות</b><span>לגשר בין תרבויות ודורות, ולמצוא את המקום שלך בחברה הישראלית.</span></li>
+    </ul>
+    <p class="jr-fit">הסיפור הוא חלק מההרצאה ״אמון, תקווה והצלחה״, ואפשר להביא אותו גם כשיחה בפני עצמה. מתאים במיוחד לחג הסיגד, ליום ירושלים ולימי זהות ושורשים בבתי ספר ובקהילות.</p>
+    <a class="btn btn-p" href="#contact" data-topic="סיפור הדרך מאתיופיה לישראל">להזמנת השיחה על הדרך</a> <a class="btn btn-o" href="ethiopian-heritage.html" style="color:#E9C46A;border-color:#E9C46A">עוד על מורשת יהדות אתיופיה</a>
+   </div>
+   <figure class="jr-proof">
+    <img src="img/gal-sigd-derech.webp" alt="הזמנה לערב חג הסיגד בדרך עמי: שיחה על הדרך עם אמיר מרשה" width="800" height="1200" loading="lazy">
+    <figcaption>ערב חג הסיגד בדרך עמי: ״שיחה על הדרך״</figcaption>
+   </figure>
+  </div>
+ </div>
 </section>
 
 <section class="lec3-sec" id="lectures" aria-labelledby="hl">
@@ -570,7 +649,7 @@ html.no-motion .route .draw{stroke-dashoffset:0}
    </div>
    <div class="row">
     <div><label for="f-org">ארגון, בית ספר או עסק</label><input id="f-org" maxlength="100" autocomplete="organization"></div>
-    <div><label for="f-type">סוג הפנייה</label><select id="f-type"><option>הזמנת הרצאה</option><option>אמון, תקווה והצלחה</option><option>בינה מלאכותית והשפעתה על חיי היום־יום</option><option>כלכלה וניהול משק בית</option><option>שבת סמינריונית או יום עיון</option><option>אחר</option></select></div>
+    <div><label for="f-type">סוג הפנייה</label><select id="f-type"><option>הזמנת הרצאה</option><option>אמון, תקווה והצלחה</option><option>בינה מלאכותית והשפעתה על חיי היום־יום</option><option>כלכלה וניהול משק בית</option><option>סיפור הדרך מאתיופיה לישראל</option><option>שבת סמינריונית או יום עיון</option><option>אחר</option></select></div>
    </div>
    <div class="row">
     <div><label for="f-date">תאריך משוער</label><input id="f-date" type="date"></div>
@@ -837,5 +916,10 @@ if(auto){play();var ev=['pointerdown','keydown','touchend'],f=function(e){if(e.t
 </script>
 <!-- /music -->
 <script src="analytics.js" defer></script><script src="source.js" defer></script>
+<script>
+(function(){var r=document.getElementById('jrRoad');if(!r)return;
+if(!('IntersectionObserver' in window)){r.classList.add('on');return}
+var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){r.classList.add('on');o.disconnect()}})},{threshold:.35});o.observe(r)})();
+</script>
 </body>
 </html>
